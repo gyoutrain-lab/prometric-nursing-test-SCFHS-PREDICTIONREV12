@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SCFHS Pass Prediction Engine</title>
+
+<style>
+body { font-family: Arial, sans-serif; background:#f4f6f8; margin:0 }
+.container { max-width:900px; margin:auto; background:#fff; padding:20px; min-height:100vh }
+.hidden { display:none }
+input, button { padding:10px; width:100%; margin:5px 0; font-size:16px }
+.option { border:1px solid #ccc; padding:10px; margin-top:8px; cursor:pointer }
+.option:hover { background:#eef2f5 }
+.option.selected { background:#dbeafe }
+.rationale { background:#f9fafb; border:1px solid #ccc; padding:15px; margin-top:15px }
+.report { background:#f1f5f9; padding:20px; margin-top:20px }
+hr { margin:15px 0 }
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<!-- START -->
+<div id="startScreen">
+  <h1>SCFHS Pass Prediction Test</h1>
+  <input id="name" placeholder="Full Name">
+  <input id="id" placeholder="Candidate ID">
+  <button onclick="startExam()">Start</button>
+</div>
+
+<!-- EXAM -->
+<div id="examScreen" class="hidden">
+  <h2 id="counter"></h2>
+  <p id="stem"></p>
+  <div id="options"></div>
+  <button onclick="submit()">Submit</button>
+
+  <div id="rationale" class="rationale hidden"></div>
+  <button id="nextBtn" class="hidden" onclick="next()">Next</button>
+</div>
+
+<!-- RESULT -->
+<div id="resultScreen" class="hidden">
+  <h1>PASS PREDICTION RESULT</h1>
+  <div id="report" class="report"></div>
+</div>
+
+</div>
+
+<script>
+// ================= QUESTION BANK =================
+
+const bank = [
+{
+  critical:true,
+  stem:"A 68-year-old male with pneumonia becomes restless 20 minutes after admission. BP 88/54, HR 124, RR 30, SpO₂ 89% on room air.",
+  options:[
+    {t:"Notify the physician immediately", tag:"ESCALATION"},
+    {t:"Elevate the head of the bed", tag:"DELAY"},
+    {t:"Initiate supplemental oxygen therapy", tag:"SCFHS"},
+    {t:"Prepare intubation equipment", tag:"ANTICIPATION"}
+  ],
+  correct:2,
+  rationale:{
+    correct:"Although notifying the physician and preparing for advanced airway support may be appropriate, the patient demonstrates acute hypoxia requiring immediate nursing intervention. Supplemental oxygen directly addresses impaired gas exchange, whereas other actions may delay correction of hypoxia. Therefore, initiating oxygen therapy is the most appropriate first action.",
+    options:[
+      "This reflects escalation bias. SCFHS expects stabilization before notification.",
+      "This may improve ventilation but does not directly correct hypoxia.",
+      "Correct — this action immediately addresses the life-threatening problem.",
+      "This anticipates deterioration but bypasses required immediate intervention."
+    ]
+  }
+},
+{
+  critical:false,
+  stem:"A postoperative patient reports severe incisional pain. BP 158/96, HR 110. Surgical dressing is clean and dry.",
+  options:[
+    {t:"Administer prescribed analgesic", tag:"SCFHS"},
+    {t:"Reassure and encourage relaxation", tag:"DELAY"},
+    {t:"Notify the surgeon of hypertension", tag:"ESCALATION"},
+    {t:"Reassess the surgical site", tag:"ASSESS"}
+  ],
+  correct:0,
+  rationale:{
+    correct:"Although further assessment and provider notification may be appropriate, the patient's physiological response indicates uncontrolled pain. Administering prescribed analgesia directly addresses the underlying cause and is the most appropriate first action.",
+    options:[
+      "Correct — this treats the root cause of the instability.",
+      "This provides comfort but delays symptom control.",
+      "This escalates care unnecessarily before intervention.",
+      "Assessment is reasonable but no signs indicate complications."
+    ]
+  }
+}
+];
+
+// ================= ENGINE =================
+
+let qList=[], i=0, selected=null;
+let pattern={SCFHS:0, ESCALATION:0, DELAY:0, ANTICIPATION:0, ASSESS:0};
+let criticalErrors=0;
+
+function shuffle(a){ return a.sort(()=>Math.random()-0.5); }
+
+function startExam(){
+  if(!name.value||!id.value){ alert("Enter Name and ID"); return; }
+  qList=shuffle([...bank]);
+  qList.forEach(q=>q.options=shuffle(q.options));
+  startScreen.classList.add("hidden");
+  examScreen.classList.remove("hidden");
+  load();
+}
+
+function load(){
+  selected=null;
+  rationale.classList.add("hidden");
+  nextBtn.classList.add("hidden");
+  counter.innerText=`Question ${i+1} of ${qList.length}`;
+  stem.innerText=qList[i].stem;
+  options.innerHTML="";
+  qList[i].options.forEach((o,idx)=>{
+    let d=document.createElement("div");
+    d.className="option";
+    d.innerText=o.t;
+    d.onclick=()=>select(d,idx);
+    options.appendChild(d);
+  });
+}
+
+function select(div,idx){
+  document.querySelectorAll(".option").forEach(o=>o.classList.remove("selected"));
+  div.classList.add("selected");
+  selected=idx;
+}
+
+function submit(){
+  if(selected===null){ alert("Select an option"); return; }
+  let q=qList[i];
+  let chosen=q.options[selected];
+  pattern[chosen.tag]++;
+
+  let html="";
+  if(selected===q.correct){
+    html+="<b>Correct.</b><br><br>"+q.rationale.correct;
+  } else {
+    if(q.critical) criticalErrors++;
+    html+="<b>Incorrect.</b><br><br>";
+    html+=q.rationale.options[selected];
+    html+="<hr><b>Correct Rationale:</b><br>"+q.rationale.correct;
+  }
+
+  rationale.innerHTML=html;
+  rationale.classList.remove("hidden");
+  nextBtn.classList.remove("hidden");
+}
+
+function next(){
+  i++;
+  if(i<qList.length) load();
+  else showResult();
+}
+
+function showResult(){
+  examScreen.classList.add("hidden");
+  resultScreen.classList.remove("hidden");
+
+  let go = pattern.SCFHS >= (pattern.ESCALATION + pattern.DELAY)
+           && criticalErrors===0;
+
+  report.innerHTML=`
+<b>Candidate:</b> ${name.value}<br>
+<b>ID:</b> ${id.value}<br><br>
+
+<b>Decision:</b> ${go ? "🟢 GO — SCFHS READY" : "🔴 NO-GO — NOT READY"}<br><br>
+
+<b>Pattern Analysis</b><br>
+SCFHS Actions: ${pattern.SCFHS}<br>
+Escalation Bias: ${pattern.ESCALATION}<br>
+Delay Bias: ${pattern.DELAY}<br>
+Anticipation Bias: ${pattern.ANTICIPATION}<br><br>
+
+<b>Trainer Interpretation</b><br>
+${go
+? "The candidate demonstrates consistent prioritization and immediate nursing intervention aligned with SCFHS Prometric expectations."
+: "The response pattern indicates delayed or escalation-biased decision-making. Further retraining in first-action prioritization is required before attempting the SCFHS exam."}
+`;
+}
+</script>
+
+</body>
+</html>
