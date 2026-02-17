@@ -70,6 +70,117 @@ const questions = [{
       SAFE_DELAY:"Advanced airway prep comes after basic stabilization."
     }
   }
+ },
+{
+  q: "A 72-year-old patient with COPD becomes increasingly drowsy. ABG shows pH 7.28, PaCO₂ 62 mmHg, PaO₂ 58 mmHg. SpO₂ 88% on 4 L nasal cannula. What is the nurse’s PRIORITY action?",
+  options: [
+    { text: "Increase oxygen flow to 6 L/min", tag: "SAFE_DELAY" },
+    { text: "Prepare the patient for noninvasive ventilation (BiPAP)", tag: "SCFHS" },
+    { text: "Notify the physician of worsening ABGs", tag: "STR" },
+    { text: "Encourage deep breathing and coughing", tag: "NCLEX" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct:
+      "The patient demonstrates acute respiratory acidosis with carbon dioxide retention. Noninvasive ventilation improves alveolar ventilation and reduces PaCO₂, addressing the underlying cause of deterioration.",
+    distractors: {
+      SAFE_DELAY:
+        "Increasing oxygen alone may worsen CO₂ retention in COPD patients.",
+      STR:
+        "Provider notification is appropriate but should not delay ventilatory support.",
+      NCLEX:
+        "Breathing exercises are insufficient for acute ventilatory failure."
+    }
+  }
+},
+{
+  q: "A postoperative client reports sudden chest pain and shortness of breath 24 hours after hip surgery. HR 118, RR 28, SpO₂ 90% on room air. What should the nurse do FIRST?",
+  options: [
+    { text: "Administer prescribed PRN analgesics", tag: "SAFE_DELAY" },
+    { text: "Apply oxygen and raise the head of the bed", tag: "SCFHS" },
+    { text: "Request a STAT chest X-ray", tag: "NCLEX" },
+    { text: "Notify the surgeon immediately", tag: "STR" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct:
+      "The presentation suggests possible pulmonary embolism. Immediate oxygenation and positioning support gas exchange while further evaluation is arranged.",
+    distractors: {
+      SAFE_DELAY:
+        "Treating pain alone delays management of a potentially fatal condition.",
+      NCLEX:
+        "Diagnostic testing should not precede stabilization.",
+      STR:
+        "Escalation is appropriate but only after initiating supportive care."
+    }
+  }
+},
+{
+  q: "A patient with diabetes becomes confused and diaphoretic. Capillary glucose reads 42 mg/dL. What is the nurse’s PRIORITY action?",
+  options: [
+    { text: "Administer IV dextrose per protocol", tag: "SCFHS" },
+    { text: "Recheck blood glucose to confirm accuracy", tag: "NCLEX" },
+    { text: "Notify the healthcare provider", tag: "STR" },
+    { text: "Document findings and monitor closely", tag: "SAFE_DELAY" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct:
+      "The patient is experiencing symptomatic hypoglycemia. Immediate administration of glucose corrects neuroglycopenia and prevents seizure or loss of consciousness.",
+    distractors: {
+      NCLEX:
+        "Repeating testing delays urgent treatment.",
+      STR:
+        "Provider notification should not delay life-saving intervention.",
+      SAFE_DELAY:
+        "Observation without treatment places the patient at significant risk."
+    }
+  }
+},
+{
+  q: "A client receiving a blood transfusion develops fever, chills, and flank pain 15 minutes after initiation. What is the nurse’s FIRST action?",
+  options: [
+    { text: "Stop the transfusion immediately", tag: "SCFHS" },
+    { text: "Administer antipyretics as ordered", tag: "NCLEX" },
+    { text: "Notify the blood bank", tag: "STR" },
+    { text: "Slow the transfusion rate", tag: "SAFE_DELAY" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct:
+      "These findings suggest an acute hemolytic transfusion reaction. Stopping the transfusion immediately prevents further exposure and reduces the risk of renal failure and shock.",
+    distractors: {
+      NCLEX:
+        "Medications do not address the cause of the reaction.",
+      STR:
+        "Notification is required but only after stopping the transfusion.",
+      SAFE_DELAY:
+        "Slowing the infusion allows continued antigen exposure."
+    }
+  }
+},
+{
+  q: "A patient with a history of stroke suddenly develops unilateral weakness and slurred speech. Time of onset is unknown. What should the nurse do FIRST?",
+  options: [
+    { text: "Perform a rapid neurological assessment", tag: "SCFHS" },
+    { text: "Prepare the patient for CT imaging", tag: "NCLEX" },
+    { text: "Notify the stroke response team", tag: "STR" },
+    { text: "Check blood glucose level", tag: "SAFE_DELAY" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct:
+      "A focused neurological assessment establishes baseline deficits and guides urgency of further interventions while maintaining rapid workflow.",
+    distractors: {
+      NCLEX:
+        "Imaging is required but should follow immediate bedside assessment.",
+      STR:
+        "Escalation is appropriate after initial evaluation.",
+      SAFE_DELAY:
+        "Glucose assessment is important but should not delay stroke evaluation."
+    }
+  }
+}
 }];
 
 /* -------- ENGINE -------- */
