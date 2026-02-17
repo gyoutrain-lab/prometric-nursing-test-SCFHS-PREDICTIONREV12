@@ -2,189 +2,249 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>SCFHS Pass Prediction Engine</title>
+<title>SCFHS Prometric Pass Prediction Engine</title>
 
 <style>
-body { font-family: Arial, sans-serif; background:#f4f6f8; margin:0 }
-.container { max-width:900px; margin:auto; background:#fff; padding:20px; min-height:100vh }
-.hidden { display:none }
-input, button { padding:10px; width:100%; margin:5px 0; font-size:16px }
-.option { border:1px solid #ccc; padding:10px; margin-top:8px; cursor:pointer }
-.option:hover { background:#eef2f5 }
-.option.selected { background:#dbeafe }
-.rationale { background:#f9fafb; border:1px solid #ccc; padding:15px; margin-top:15px }
-.report { background:#f1f5f9; padding:20px; margin-top:20px }
-hr { margin:15px 0 }
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f6f8;
+  margin: 0;
+  padding: 20px;
+}
+.container {
+  max-width: 900px;
+  margin: auto;
+  background: #fff;
+  padding: 25px;
+  border-radius: 8px;
+}
+.hidden { display: none; }
+.option {
+  border: 1px solid #ccc;
+  padding: 12px;
+  margin: 10px 0;
+  cursor: pointer;
+  border-radius: 6px;
+}
+.option:hover {
+  background: #eef3ff;
+}
+.option.selected {
+  background: #dce6ff;
+}
+.correct {
+  border-left: 6px solid green;
+  background: #e9f8ee;
+}
+.wrong {
+  border-left: 6px solid red;
+  background: #fdeaea;
+}
+button {
+  padding: 10px 18px;
+  font-size: 15px;
+  margin-top: 15px;
+}
+#rationaleBox {
+  margin-top: 20px;
+  padding: 15px;
+  background: #f9fafb;
+  border-radius: 6px;
+}
 </style>
 </head>
 
 <body>
+
 <div class="container">
 
-<!-- START -->
+<!-- START SCREEN -->
 <div id="startScreen">
-  <h1>SCFHS Pass Prediction Test</h1>
-  <input type="text" id="candidateName" placeholder="Full Name">
-  <input type="text" id="candidateID" placeholder="Candidate ID">
-  <button onclick="startExam()">Start Test</button>
+  <h2>SCFHS Prometric Pass Prediction</h2>
+  <p>This assessment evaluates readiness based on SCFHS prioritization logic.</p>
+  <label>Name:</label><br>
+  <input type="text" id="studentName"><br><br>
+  <label>ID:</label><br>
+  <input type="text" id="studentID"><br><br>
+  <button onclick="startExam()">Start Assessment</button>
 </div>
 
-
-<!-- EXAM -->
+<!-- EXAM SCREEN -->
 <div id="examScreen" class="hidden">
-  <h2 id="counter"></h2>
-  <p id="stem"></p>
+  <h3 id="progress"></h3>
+  <p id="questionText"></p>
   <div id="options"></div>
-  <button onclick="submit()">Submit</button>
-
-  <div id="rationale" class="rationale hidden"></div>
-  <button id="nextBtn" class="hidden" onclick="next()">Next</button>
+  <button onclick="submitAnswer()">Submit Answer</button>
+  <div id="rationaleBox" class="hidden"></div>
+  <button id="nextBtn" class="hidden" onclick="nextQuestion()">Next</button>
 </div>
 
-<!-- RESULT -->
+<!-- RESULT SCREEN -->
 <div id="resultScreen" class="hidden">
-  <h1>PASS PREDICTION RESULT</h1>
-  <div id="report" class="report"></div>
+  <h2>Assessment Result</h2>
+  <p id="candidateInfo"></p>
+  <p id="decision"></p>
+  <p id="interpretation"></p>
 </div>
 
 </div>
 
 <script>
-// ================= QUESTION BANK =================
+/* ---------------- DATA ---------------- */
 
-const bank = [
+const questions = [
 {
-  critical:true,
-  stem:"A 68-year-old male with pneumonia becomes restless 20 minutes after admission. BP 88/54, HR 124, RR 30, SpO₂ 89% on room air.",
-  options:[
-    {t:"Notify the physician immediately", tag:"ESCALATION"},
-    {t:"Elevate the head of the bed", tag:"DELAY"},
-    {t:"Initiate supplemental oxygen therapy", tag:"SCFHS"},
-    {t:"Prepare intubation equipment", tag:"ANTICIPATION"}
-  ],
-  correct:2,
-  rationale:{
-    correct:"Although notifying the physician and preparing for advanced airway support may be appropriate, the patient demonstrates acute hypoxia requiring immediate nursing intervention. Supplemental oxygen directly addresses impaired gas exchange, whereas other actions may delay correction of hypoxia. Therefore, initiating oxygen therapy is the most appropriate first action.",
-    options:[
-      "This reflects escalation bias. SCFHS expects stabilization before notification.",
-      "This may improve ventilation but does not directly correct hypoxia.",
-      "Correct — this action immediately addresses the life-threatening problem.",
-      "This anticipates deterioration but bypasses required immediate intervention."
-    ]
-  }
-},
-{
-  critical:false,
-  stem:"A postoperative patient reports severe incisional pain. BP 158/96, HR 110. Surgical dressing is clean and dry.",
-  options:[
-    {t:"Administer prescribed analgesic", tag:"SCFHS"},
-    {t:"Reassure and encourage relaxation", tag:"DELAY"},
-    {t:"Notify the surgeon of hypertension", tag:"ESCALATION"},
-    {t:"Reassess the surgical site", tag:"ASSESS"}
-  ],
-  correct:0,
-  rationale:{
-    correct:"Although further assessment and provider notification may be appropriate, the patient's physiological response indicates uncontrolled pain. Administering prescribed analgesia directly addresses the underlying cause and is the most appropriate first action.",
-    options:[
-      "Correct — this treats the root cause of the instability.",
-      "This provides comfort but delays symptom control.",
-      "This escalates care unnecessarily before intervention.",
-      "Assessment is reasonable but no signs indicate complications."
-    ]
+q: "A 68-year-old male admitted with pneumonia becomes acutely restless. BP 88/54, HR 124, RR 30, SpO₂ 89% on room air. What is the nurse’s PRIORITY action?",
+options: [
+  { text: "Notify the physician of the patient’s deterioration", tag: "STR" },
+  { text: "Elevate the head of the bed and apply supplemental oxygen", tag: "SCFHS" },
+  { text: "Obtain arterial blood gases", tag: "NCLEX" },
+  { text: "Prepare for possible intubation", tag: "SAFE_DELAY" }
+],
+correctTag: "SCFHS",
+rationale: {
+  correct:
+    "Although notifying the provider and obtaining diagnostics are appropriate, the patient demonstrates acute hypoxia and hemodynamic instability requiring immediate nursing intervention. Elevating the head of the bed improves ventilation, and supplemental oxygen directly addresses impaired gas exchange. This action stabilizes the patient while further medical management is arranged.",
+  distractors: {
+    STR:
+      "Notifying the physician is appropriate but represents escalation rather than immediate stabilization. The nurse must initiate urgent supportive measures first.",
+    NCLEX:
+      "Arterial blood gases provide diagnostic data but delay treatment. Data collection should not precede life-saving interventions.",
+    SAFE_DELAY:
+      "Preparing for intubation may become necessary; however, initiating basic oxygenation and positioning is required before advanced airway preparation."
   }
 }
 ];
 
-// ================= ENGINE =================
+/* ---------------- ENGINE ---------------- */
 
-let qList=[], i=0, selected=null;
-let pattern={SCFHS:0, ESCALATION:0, DELAY:0, ANTICIPATION:0, ASSESS:0};
-let criticalErrors=0;
+let current = 0;
+let selectedOption = null;
 
-function shuffle(a){ return a.sort(()=>Math.random()-0.5); }
+let score = {
+  SCFHS: 0,
+  NCLEX: 0,
+  STR: 0,
+  SAFE_DELAY: 0
+};
 
-function startExam(){
-  if(!name.value||!id.value){ alert("Enter Name and ID"); return; }
-  qList=shuffle([...bank]);
-  qList.forEach(q=>q.options=shuffle(q.options));
-  startScreen.classList.add("hidden");
-  examScreen.classList.remove("hidden");
-  load();
+function shuffle(array) {
+  return array.sort(() => Math.random() - 0.5);
 }
 
-function load(){
-  selected=null;
-  rationale.classList.add("hidden");
-  nextBtn.classList.add("hidden");
-  counter.innerText=`Question ${i+1} of ${qList.length}`;
-  stem.innerText=qList[i].stem;
-  options.innerHTML="";
-  qList[i].options.forEach((o,idx)=>{
-    let d=document.createElement("div");
-    d.className="option";
-    d.innerText=o.t;
-    d.onclick=()=>select(d,idx);
-    options.appendChild(d);
+function startExam() {
+  if (!studentName.value || !studentID.value) {
+    alert("Please enter Name and ID.");
+    return;
+  }
+  shuffle(questions);
+  questions.forEach(q => shuffle(q.options));
+
+  document.getElementById("startScreen").classList.add("hidden");
+  document.getElementById("examScreen").classList.remove("hidden");
+  loadQuestion();
+}
+
+function loadQuestion() {
+  selectedOption = null;
+  document.getElementById("rationaleBox").classList.add("hidden");
+  document.getElementById("nextBtn").classList.add("hidden");
+
+  const q = questions[current];
+  document.getElementById("progress").innerText =
+    `Question ${current + 1} of ${questions.length}`;
+  document.getElementById("questionText").innerText = q.q;
+
+  const optionsDiv = document.getElementById("options");
+  optionsDiv.innerHTML = "";
+
+  q.options.forEach((opt, idx) => {
+    const div = document.createElement("div");
+    div.className = "option";
+    div.innerText = opt.text;
+    div.onclick = () => selectOption(idx, div);
+    optionsDiv.appendChild(div);
   });
 }
 
-function select(div,idx){
-  document.querySelectorAll(".option").forEach(o=>o.classList.remove("selected"));
+function selectOption(idx, div) {
+  document.querySelectorAll(".option").forEach(o => o.classList.remove("selected"));
   div.classList.add("selected");
-  selected=idx;
+  selectedOption = idx;
 }
 
-function submit(){
-  if(selected===null){ alert("Select an option"); return; }
-  let q=qList[i];
-  let chosen=q.options[selected];
-  pattern[chosen.tag]++;
-
-  let html="";
-  if(selected===q.correct){
-    html+="<b>Correct.</b><br><br>"+q.rationale.correct;
-  } else {
-    if(q.critical) criticalErrors++;
-    html+="<b>Incorrect.</b><br><br>";
-    html+=q.rationale.options[selected];
-    html+="<hr><b>Correct Rationale:</b><br>"+q.rationale.correct;
+function submitAnswer() {
+  if (selectedOption === null) {
+    alert("Select an option.");
+    return;
   }
 
-  rationale.innerHTML=html;
-  rationale.classList.remove("hidden");
-  nextBtn.classList.remove("hidden");
+  const q = questions[current];
+  const chosen = q.options[selectedOption];
+  const isCorrect = chosen.tag === q.correctTag;
+
+  if (isCorrect) {
+    score.SCFHS++;
+  } else {
+    score[chosen.tag]++;
+  }
+
+  const rationaleBox = document.getElementById("rationaleBox");
+  rationaleBox.classList.remove("hidden");
+
+  let html = isCorrect
+    ? "<b>Correct.</b><br><br>"
+    : "<b>Incorrect.</b><br><br>";
+
+  q.options.forEach((opt, idx) => {
+    if (opt.tag === q.correctTag) {
+      html += `<p><b>${opt.text}</b><br>${q.rationale.correct}</p>`;
+    } else {
+      html += `<p><b>${opt.text}</b><br>${q.rationale.distractors[opt.tag]}</p>`;
+    }
+  });
+
+  rationaleBox.innerHTML = html;
+
+  document.querySelectorAll(".option").forEach((div, idx) => {
+    const opt = q.options[idx];
+    if (opt.tag === q.correctTag) div.classList.add("correct");
+    else if (idx === selectedOption) div.classList.add("wrong");
+    div.onclick = null;
+  });
+
+  document.getElementById("nextBtn").classList.remove("hidden");
 }
 
-function next(){
-  i++;
-  if(i<qList.length) load();
-  else showResult();
+function nextQuestion() {
+  current++;
+  if (current >= questions.length) {
+    showResult();
+  } else {
+    loadQuestion();
+  }
 }
 
-function showResult(){
-  examScreen.classList.add("hidden");
-  resultScreen.classList.remove("hidden");
+function showResult() {
+  document.getElementById("examScreen").classList.add("hidden");
+  document.getElementById("resultScreen").classList.remove("hidden");
 
-  let go = pattern.SCFHS >= (pattern.ESCALATION + pattern.DELAY)
-           && criticalErrors===0;
+  document.getElementById("candidateInfo").innerHTML =
+    `<b>Name:</b> ${studentName.value}<br><b>ID:</b> ${studentID.value}`;
 
-  report.innerHTML=`
-<b>Candidate:</b> ${name.value}<br>
-<b>ID:</b> ${id.value}<br><br>
+  const decisionText =
+    score.SCFHS >= score.NCLEX && score.SCFHS >= score.STR
+      ? "GO — SCFHS Readiness Indicated"
+      : "NO-GO — SCFHS Readiness Not Demonstrated";
 
-<b>Decision:</b> ${go ? "🟢 GO — SCFHS READY" : "🔴 NO-GO — NOT READY"}<br><br>
+  document.getElementById("decision").innerHTML = `<b>Decision:</b> ${decisionText}`;
 
-<b>Pattern Analysis</b><br>
-SCFHS Actions: ${pattern.SCFHS}<br>
-Escalation Bias: ${pattern.ESCALATION}<br>
-Delay Bias: ${pattern.DELAY}<br>
-Anticipation Bias: ${pattern.ANTICIPATION}<br><br>
-
-<b>Trainer Interpretation</b><br>
-${go
-? "The candidate demonstrates consistent prioritization and immediate nursing intervention aligned with SCFHS Prometric expectations."
-: "The response pattern indicates delayed or escalation-biased decision-making. Further retraining in first-action prioritization is required before attempting the SCFHS exam."}
-`;
+  document.getElementById("interpretation").innerHTML =
+    `<b>Examiner Interpretation:</b><br>
+     ${decisionText.includes("GO")
+       ? "Performance reflects prioritization and immediate intervention consistent with SCFHS Prometric standards."
+       : "Performance demonstrates delayed action or non-priority decision patterns inconsistent with SCFHS Prometric expectations. Remediation recommended."
+     }`;
 }
 </script>
 
