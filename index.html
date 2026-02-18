@@ -1733,6 +1733,366 @@ const questions = [
       STR: "Justice relates to fairness."
     }
   }
+},
+{
+  q: "A 7-year-old child requires emergency surgery to control internal bleeding. Parents are not reachable. What is the nurse’s PRIORITY action?",
+  options: [
+    { text: "Prepare the child for surgery under implied consent", tag: "SCFHS" },
+    { text: "Delay surgery until parents arrive", tag: "SAFE_DELAY" },
+    { text: "Request written consent from another relative", tag: "NCLEX" },
+    { text: "Document inability to obtain consent and wait", tag: "STR" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "In life-threatening emergencies, treatment proceeds under implied consent to prevent harm.",
+    distractors: {
+      SAFE_DELAY: "Delay may result in preventable death.",
+      NCLEX: "Relatives cannot consent unless legally authorized.",
+      STR: "Waiting violates emergency standards of care."
+    }
+  }
+},
+{
+  q: "A 16-year-old requests treatment for a sexually transmitted infection and asks that parents not be notified. What should the nurse do?",
+  options: [
+    { text: "Provide care and maintain confidentiality", tag: "SCFHS" },
+    { text: "Refuse treatment without parental consent", tag: "SAFE_DELAY" },
+    { text: "Inform parents after treatment", tag: "NCLEX" },
+    { text: "Ask the physician to decide", tag: "STR" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "Many jurisdictions allow minors to consent to STI-related care without parental notification.",
+    distractors: {
+      SAFE_DELAY: "Refusal may violate public health laws.",
+      NCLEX: "Disclosure breaches confidentiality protections.",
+      STR: "The nurse is responsible to follow consent law."
+    }
+  }
+},
+{
+  q: "Parents refuse a life-saving blood transfusion for their child based on religious beliefs. What is the nurse’s BEST action?",
+  options: [
+    { text: "Notify the provider and ethics/legal services immediately", tag: "SCFHS" },
+    { text: "Respect the parents’ decision without question", tag: "SAFE_DELAY" },
+    { text: "Administer transfusion secretly", tag: "NCLEX" },
+    { text: "Discharge the child against medical advice", tag: "STR" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "When parental refusal endangers a child, legal intervention may be required.",
+    distractors: {
+      SAFE_DELAY: "Parental authority is not absolute.",
+      NCLEX: "Secret treatment is illegal.",
+      STR: "Discharge places the child at risk."
+    }
+  }
+},
+{
+  q: "A 14-year-old who is legally emancipated requires surgery. Who may provide consent?",
+  options: [
+    { text: "The adolescent patient", tag: "SCFHS" },
+    { text: "The parents", tag: "SAFE_DELAY" },
+    { text: "The physician", tag: "NCLEX" },
+    { text: "The hospital administrator", tag: "STR" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "Emancipated minors have legal authority to consent to their own care.",
+    distractors: {
+      SAFE_DELAY: "Parents no longer hold consent authority.",
+      NCLEX: "Physicians do not replace patient consent.",
+      STR: "Administrators have no consent role."
+    }
+  }
+},
+{
+  q: "A toddler requires routine immunization. The parent refuses and becomes hostile. What is the nurse’s MOST appropriate action?",
+  options: [
+    { text: "Provide education and document refusal", tag: "SCFHS" },
+    { text: "Administer the vaccine anyway", tag: "SAFE_DELAY" },
+    { text: "Call child protective services immediately", tag: "NCLEX" },
+    { text: "Remove the family from the clinic", tag: "STR" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "Parents may refuse non-emergency care; education and documentation are required.",
+    distractors: {
+      SAFE_DELAY: "Forced treatment is assault.",
+      NCLEX: "Refusal alone is not abuse.",
+      STR: "Removal escalates conflict unnecessarily."
+    }
+  }
+},
+{
+  q: "A school-age child requires sutures. The child agrees but the parent refuses. The wound is not life-threatening. What should the nurse do?",
+  options: [
+    { text: "Delay treatment and notify the provider", tag: "SCFHS" },
+    { text: "Proceed based on the child’s assent", tag: "SAFE_DELAY" },
+    { text: "Sedate the child for treatment", tag: "NCLEX" },
+    { text: "Ask another nurse to convince the parent", tag: "STR" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "For non-emergency care, parental consent is required.",
+    distractors: {
+      SAFE_DELAY: "Child assent does not equal legal consent.",
+      NCLEX: "Sedation without consent is illegal.",
+      STR: "Persuasion cannot override refusal."
+    }
+  }
+},
+{
+  q: "A newborn requires vitamin K injection. Parents decline. What is the nurse’s LEGAL responsibility?",
+  options: [
+    { text: "Document refusal and provide education", tag: "SCFHS" },
+    { text: "Administer the injection to prevent harm", tag: "SAFE_DELAY" },
+    { text: "Obtain a court order immediately", tag: "NCLEX" },
+    { text: "Report the parents for neglect", tag: "STR" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "Routine preventive treatments may be refused; documentation is essential.",
+    distractors: {
+      SAFE_DELAY: "Forced care violates consent laws.",
+      NCLEX: "Court orders are reserved for serious risk.",
+      STR: "Refusal alone does not equal neglect."
+    }
+  }
+},
+{
+  q: "A 15-year-old pregnant adolescent seeks prenatal care alone. What is the nurse’s BEST response?",
+  options: [
+    { text: "Provide care and respect confidentiality", tag: "SCFHS" },
+    { text: "Require parental consent", tag: "SAFE_DELAY" },
+    { text: "Delay care until a guardian arrives", tag: "NCLEX" },
+    { text: "Refer the patient elsewhere", tag: "STR" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "Pregnant minors often have legal authority to consent to prenatal care.",
+    distractors: {
+      SAFE_DELAY: "Parental consent may not be required.",
+      NCLEX: "Delay risks maternal-fetal health.",
+      STR: "Referral avoids duty of care."
+    }
+  }
+},
+{
+  q: "A child discloses physical abuse during assessment. The parent is present and denies it. What must the nurse do?",
+  options: [
+    { text: "Report the suspicion according to mandatory reporting laws", tag: "SCFHS" },
+    { text: "Confront the parent immediately", tag: "SAFE_DELAY" },
+    { text: "Wait for physician confirmation", tag: "NCLEX" },
+    { text: "Document and take no further action", tag: "STR" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "Healthcare professionals are mandated reporters of suspected abuse.",
+    distractors: {
+      SAFE_DELAY: "Confrontation may endanger the child.",
+      NCLEX: "Confirmation is not required.",
+      STR: "Inaction violates legal duty."
+    }
+  }
+},
+{
+  q: "A pediatric patient refuses medication while the parent consents. What should the nurse do?",
+  options: [
+    { text: "Assess the child’s understanding and attempt cooperation", tag: "SCFHS" },
+    { text: "Force the medication immediately", tag: "SAFE_DELAY" },
+    { text: "Ignore the parent’s consent", tag: "NCLEX" },
+    { text: "Document refusal and discard medication", tag: "STR" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "While parents provide consent, respecting assent and minimizing trauma is required.",
+    distractors: {
+      SAFE_DELAY: "Force may constitute abuse.",
+      NCLEX: "Parental consent remains valid.",
+      STR: "Medication should not be discarded without plan."
+    }
+  }
+},
+{
+  q: "A patient states, “I plan to kill myself tonight,” and has access to a firearm. What is the nurse’s PRIORITY action?",
+  options: [
+    { text: "Ensure immediate safety and initiate involuntary hold procedures", tag: "SCFHS" },
+    { text: "Respect the patient’s confidentiality", tag: "SAFE_DELAY" },
+    { text: "Encourage the patient to reconsider", tag: "NCLEX" },
+    { text: "Document the statement and continue assessment", tag: "STR" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "Expressed intent with means constitutes imminent danger requiring immediate protective action.",
+    distractors: {
+      SAFE_DELAY: "Confidentiality does not apply when life is at risk.",
+      NCLEX: "Therapeutic communication cannot replace safety measures.",
+      STR: "Documentation alone is insufficient."
+    }
+  }
+},
+{
+  q: "A patient with acute psychosis is pacing and threatening staff but has not attempted harm. What is the nurse’s FIRST intervention?",
+  options: [
+    { text: "Use verbal de-escalation techniques", tag: "SCFHS" },
+    { text: "Apply physical restraints immediately", tag: "SAFE_DELAY" },
+    { text: "Administer PRN antipsychotic medication", tag: "NCLEX" },
+    { text: "Call security to restrain the patient", tag: "STR" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "Least-restrictive interventions must be attempted before restraints or medications.",
+    distractors: {
+      SAFE_DELAY: "Restraints are last-resort measures.",
+      NCLEX: "Medication without de-escalation may violate rights.",
+      STR: "Security escalates the situation prematurely."
+    }
+  }
+},
+{
+  q: "A patient requests discharge from a psychiatric unit but is actively hallucinating and unable to care for self. What is the nurse’s BEST response?",
+  options: [
+    { text: "Notify the provider to evaluate for involuntary hold", tag: "SCFHS" },
+    { text: "Honor the discharge request immediately", tag: "SAFE_DELAY" },
+    { text: "Ask the family to convince the patient to stay", tag: "NCLEX" },
+    { text: "Document the request and take no action", tag: "STR" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "Inability to meet basic needs may justify involuntary commitment.",
+    distractors: {
+      SAFE_DELAY: "Discharge may result in harm.",
+      NCLEX: "Family persuasion does not replace legal process.",
+      STR: "Inaction violates duty to protect."
+    }
+  }
+},
+{
+  q: "A patient under involuntary psychiatric hold requests to leave the unit. What should the nurse explain?",
+  options: [
+    { text: "The patient may not leave until legally released", tag: "SCFHS" },
+    { text: "The hold overrides all patient rights", tag: "SAFE_DELAY" },
+    { text: "The nurse will decide when discharge is safe", tag: "NCLEX" },
+    { text: "The patient may leave if accompanied by family", tag: "STR" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "Involuntary hold restricts freedom of movement but not all rights.",
+    distractors: {
+      SAFE_DELAY: "Patients retain legal protections.",
+      NCLEX: "Nurses do not determine legal release.",
+      STR: "Family presence does not void a hold."
+    }
+  }
+},
+{
+  q: "A patient threatens to harm a specific individual after discharge. What is the nurse’s LEGAL duty?",
+  options: [
+    { text: "Report the threat according to duty-to-warn laws", tag: "SCFHS" },
+    { text: "Maintain confidentiality", tag: "SAFE_DELAY" },
+    { text: "Document the threat without reporting", tag: "NCLEX" },
+    { text: "Ask the patient to sign a no-harm agreement", tag: "STR" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "Credible threats trigger a duty to protect potential victims.",
+    distractors: {
+      SAFE_DELAY: "Confidentiality is overridden by risk of harm.",
+      NCLEX: "Documentation alone does not protect others.",
+      STR: "Agreements have no legal force."
+    }
+  }
+},
+{
+  q: "Which situation MOST justifies involuntary psychiatric commitment?",
+  options: [
+    { text: "Patient poses an immediate danger to self or others", tag: "SCFHS" },
+    { text: "Patient refuses prescribed medication", tag: "SAFE_DELAY" },
+    { text: "Patient displays unusual beliefs", tag: "NCLEX" },
+    { text: "Patient is homeless and unemployed", tag: "STR" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "Imminent risk is the legal threshold for involuntary commitment.",
+    distractors: {
+      SAFE_DELAY: "Refusal alone is insufficient.",
+      NCLEX: "Beliefs are protected unless dangerous.",
+      STR: "Social issues do not justify commitment."
+    }
+  }
+},
+{
+  q: "A patient calms after restraint application. What is the nurse’s NEXT responsibility?",
+  options: [
+    { text: "Remove restraints as soon as it is safe", tag: "SCFHS" },
+    { text: "Keep restraints until the end of shift", tag: "SAFE_DELAY" },
+    { text: "Wait for family approval", tag: "NCLEX" },
+    { text: "Document and leave restraints in place", tag: "STR" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "Restraints must be discontinued at the earliest safe opportunity.",
+    distractors: {
+      SAFE_DELAY: "Prolonged restraint violates patient rights.",
+      NCLEX: "Family consent is not required.",
+      STR: "Documentation does not justify continued restraint."
+    }
+  }
+},
+{
+  q: "A nurse suspects a patient lacks decision-making capacity. What is the nurse’s FIRST step?",
+  options: [
+    { text: "Notify the provider for formal evaluation", tag: "SCFHS" },
+    { text: "Assume incapacity based on behavior", tag: "SAFE_DELAY" },
+    { text: "Ask family to make decisions immediately", tag: "NCLEX" },
+    { text: "Proceed with involuntary treatment", tag: "STR" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "Capacity determinations require formal evaluation.",
+    distractors: {
+      SAFE_DELAY: "Behavior alone does not determine capacity.",
+      NCLEX: "Family involvement follows assessment.",
+      STR: "Treatment without evaluation is unlawful."
+    }
+  }
+},
+{
+  q: "A patient under involuntary hold refuses medication. What is the nurse’s MOST appropriate action?",
+  options: [
+    { text: "Assess risk and follow legal process for forced medication", tag: "SCFHS" },
+    { text: "Administer medication anyway", tag: "SAFE_DELAY" },
+    { text: "Discharge the patient", tag: "NCLEX" },
+    { text: "Threaten continued hospitalization", tag: "STR" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "Even involuntarily held patients retain rights regarding treatment unless legally overridden.",
+    distractors: {
+      SAFE_DELAY: "Forced medication without authorization is assault.",
+      NCLEX: "Discharge may be unsafe.",
+      STR: "Coercion violates ethical standards."
+    }
+  }
+},
+{
+  q: "A patient expresses passive death wishes but denies intent or plan. What is the nurse’s BEST action?",
+  options: [
+    { text: "Conduct further suicide risk assessment", tag: "SCFHS" },
+    { text: "Initiate involuntary hold immediately", tag: "SAFE_DELAY" },
+    { text: "Dismiss the statement as attention-seeking", tag: "NCLEX" },
+    { text: "Document and end the conversation", tag: "STR" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "Further assessment is needed when risk is unclear.",
+    distractors: {
+      SAFE_DELAY: "Hold requires imminent danger.",
+      NCLEX: "Dismissal may miss escalation.",
+      STR: "Ending assessment is unsafe."
+    }
+  }
 }
 ];
 
