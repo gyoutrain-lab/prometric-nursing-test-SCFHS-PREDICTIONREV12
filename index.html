@@ -239,6 +239,1500 @@ const questions = [
         "Glucose assessment is important but should not delay stroke evaluation."
     }
   }
+},
+{
+  q: "A newly admitted patient is confused, attempting to climb out of bed, and has an IV infusion running. What is the nurse’s PRIORITY action?",
+  options: [
+    { text: "Ensure bed is low, call bell within reach, and stay with the patient", tag: "SCFHS" },
+    { text: "Apply physical restraints", tag: "SAFE_DELAY" },
+    { text: "Notify the physician of confusion", tag: "STR" },
+    { text: "Document the behavior", tag: "NCLEX" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "Immediate safety interventions prevent falls and injury using the least restrictive measures.",
+    distractors: {
+      SAFE_DELAY: "Restraints are not first-line and increase risk.",
+      STR: "Notification does not address immediate danger.",
+      NCLEX: "Documentation does not prevent harm."
+    }
+  }
+},
+{
+  q: "A 4-year-old child presents with barking cough, inspiratory stridor, and mild retractions. What should the nurse do FIRST?",
+  options: [
+    { text: "Keep the child calm and administer humidified oxygen", tag: "SCFHS" },
+    { text: "Obtain throat culture", tag: "NCLEX" },
+    { text: "Notify the pediatrician immediately", tag: "STR" },
+    { text: "Prepare for endotracheal intubation", tag: "SAFE_DELAY" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "This presentation suggests croup. Minimizing agitation and supporting oxygenation prevent airway worsening.",
+    distractors: {
+      NCLEX: "Diagnostics may distress the child and worsen obstruction.",
+      STR: "Escalation is needed only if deterioration occurs.",
+      SAFE_DELAY: "Intubation is reserved for severe distress."
+    }
+  }
+},
+{
+  q: "A postpartum woman reports sudden severe headache and visual disturbances. Blood pressure is 176/110 mmHg. What is the nurse’s PRIORITY action?",
+  options: [
+    { text: "Initiate seizure precautions and administer magnesium sulfate", tag: "SCFHS" },
+    { text: "Reassess blood pressure in 15 minutes", tag: "SAFE_DELAY" },
+    { text: "Notify the obstetric provider", tag: "STR" },
+    { text: "Provide reassurance and darken the room", tag: "NCLEX" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "These findings indicate postpartum preeclampsia. Magnesium sulfate prevents life-threatening seizures.",
+    distractors: {
+      SAFE_DELAY: "Delay increases risk of eclampsia.",
+      STR: "Notification should not delay seizure prevention.",
+      NCLEX: "Comfort measures do not address the condition."
+    }
+  }
+},
+{
+  q: "A patient with schizophrenia becomes increasingly agitated, pacing, and making verbal threats. What is the nurse’s FIRST action?",
+  options: [
+    { text: "Use calm verbal de-escalation techniques", tag: "SCFHS" },
+    { text: "Administer PRN antipsychotic medication", tag: "NCLEX" },
+    { text: "Call security", tag: "STR" },
+    { text: "Apply physical restraints", tag: "SAFE_DELAY" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "Least restrictive interventions are required initially to reduce agitation and maintain safety.",
+    distractors: {
+      NCLEX: "Medication is appropriate if de-escalation fails.",
+      STR: "Security escalation is secondary.",
+      SAFE_DELAY: "Restraints increase risk and violate principles of care."
+    }
+  }
+},
+{
+  q: "A patient with acute abdominal pain suddenly becomes rigid with rebound tenderness and hypotension. What should the nurse do FIRST?",
+  options: [
+    { text: "Initiate IV access and prepare for emergency surgery", tag: "SCFHS" },
+    { text: "Administer prescribed analgesics", tag: "NCLEX" },
+    { text: "Notify the surgeon", tag: "STR" },
+    { text: "Obtain abdominal imaging", tag: "SAFE_DELAY" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "Signs of peritonitis and shock require immediate stabilization and surgical readiness.",
+    distractors: {
+      NCLEX: "Pain control does not address life-threatening pathology.",
+      STR: "Notification should not delay preparation.",
+      SAFE_DELAY: "Imaging delays urgent care."
+    }
+  }
+},
+{
+  q: "A neonate delivered 30 minutes ago is grunting, flaring nostrils, and has a respiratory rate of 72/min. What is the nurse’s PRIORITY action?",
+  options: [
+    { text: "Provide supplemental oxygen and assess airway patency", tag: "SCFHS" },
+    { text: "Swaddle the infant to reduce stress", tag: "NCLEX" },
+    { text: "Notify the pediatrician", tag: "STR" },
+    { text: "Document findings and monitor", tag: "SAFE_DELAY" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "Signs of neonatal respiratory distress require immediate oxygenation and airway support.",
+    distractors: {
+      NCLEX: "Comfort measures alone are insufficient.",
+      STR: "Notification follows stabilization.",
+      SAFE_DELAY: "Observation delays lifesaving intervention."
+    }
+  }
+},
+{
+  q: "A patient in the ICU receiving vasopressors develops cold extremities and decreased urine output. What is the nurse’s PRIORITY action?",
+  options: [
+    { text: "Assess tissue perfusion and titrate vasoactive medications", tag: "SCFHS" },
+    { text: "Administer additional IV fluids", tag: "NCLEX" },
+    { text: "Notify the intensivist", tag: "STR" },
+    { text: "Recheck urine output in one hour", tag: "SAFE_DELAY" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "Signs of poor perfusion require immediate reassessment and titration to maintain organ function.",
+    distractors: {
+      NCLEX: "Fluids may not correct vasoconstriction.",
+      STR: "Escalation should not delay bedside correction.",
+      SAFE_DELAY: "Waiting risks organ failure."
+    }
+  }
+},
+{
+  q: "A patient admitted for depression states, 'I don’t see a reason to live anymore.' What is the nurse’s FIRST action?",
+  options: [
+    { text: "Assess for suicidal intent and immediate safety risk", tag: "SCFHS" },
+    { text: "Notify the psychiatrist", tag: "STR" },
+    { text: "Encourage the patient to express feelings", tag: "NCLEX" },
+    { text: "Document the statement", tag: "SAFE_DELAY" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "Any expression of hopelessness requires immediate suicide risk assessment and safety planning.",
+    distractors: {
+      STR: "Notification follows assessment.",
+      NCLEX: "Therapeutic communication is important but secondary to safety.",
+      SAFE_DELAY: "Documentation alone does not protect the patient."
+    }
+  }
+},
+{
+  q: "A hospitalized older adult becomes acutely confused at night, attempting to remove IV lines. Vital signs are stable. What is the nurse’s PRIORITY action?",
+  options: [
+    { text: "Reorient the patient, ensure safety, and provide adequate lighting", tag: "SCFHS" },
+    { text: "Administer prescribed sedative medication", tag: "SAFE_DELAY" },
+    { text: "Notify the physician of the behavior change", tag: "STR" },
+    { text: "Document acute confusion in the chart", tag: "NCLEX" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "Acute delirium requires immediate nonpharmacologic safety and orientation measures to prevent injury.",
+    distractors: {
+      SAFE_DELAY: "Sedatives may worsen delirium and increase fall risk.",
+      STR: "Notification does not address immediate safety needs.",
+      NCLEX: "Documentation does not prevent harm."
+    }
+  }
+},
+{
+  q: "A 2-year-old child is brought to the emergency department with fever, drooling, and tripod positioning. What is the nurse’s FIRST action?",
+  options: [
+    { text: "Maintain the child in an upright position and minimize agitation", tag: "SCFHS" },
+    { text: "Inspect the throat using a tongue depressor", tag: "SAFE_DELAY" },
+    { text: "Obtain vital signs and oxygen saturation", tag: "NCLEX" },
+    { text: "Notify the pediatric provider immediately", tag: "STR" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "These findings suggest acute epiglottitis; maintaining airway patency by minimizing distress is critical.",
+    distractors: {
+      SAFE_DELAY: "Throat inspection can precipitate airway obstruction.",
+      NCLEX: "Assessment should not provoke agitation.",
+      STR: "Escalation follows airway protection."
+    }
+  }
+},
+{
+  q: "A laboring patient at 39 weeks gestation develops sudden vaginal bleeding, abdominal pain, and uterine rigidity. What is the nurse’s PRIORITY action?",
+  options: [
+    { text: "Initiate emergency response and prepare for immediate delivery", tag: "SCFHS" },
+    { text: "Assess fetal heart rate for baseline variability", tag: "NCLEX" },
+    { text: "Notify the obstetrician", tag: "STR" },
+    { text: "Document the amount of bleeding", tag: "SAFE_DELAY" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "The presentation suggests placental abruption requiring immediate maternal and fetal rescue.",
+    distractors: {
+      NCLEX: "Assessment delays life-saving intervention.",
+      STR: "Notification must occur alongside emergency action.",
+      SAFE_DELAY: "Documentation does not address hemorrhage."
+    }
+  }
+},
+{
+  q: "A patient receiving total parenteral nutrition suddenly develops fever, chills, and tachycardia. What should the nurse do FIRST?",
+  options: [
+    { text: "Stop the infusion and assess for catheter-related infection", tag: "SCFHS" },
+    { text: "Administer antipyretics as ordered", tag: "NCLEX" },
+    { text: "Notify the healthcare provider", tag: "STR" },
+    { text: "Obtain blood cultures", tag: "SAFE_DELAY" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "Central line–associated bloodstream infection is suspected; stopping the infusion prevents further exposure.",
+    distractors: {
+      NCLEX: "Symptom treatment does not address the source.",
+      STR: "Notification follows immediate safety measures.",
+      SAFE_DELAY: "Cultures should be obtained after stabilization."
+    }
+  }
+},
+{
+  q: "A patient with traumatic brain injury becomes increasingly restless, with unequal pupils and rising blood pressure. What is the nurse’s PRIORITY action?",
+  options: [
+    { text: "Elevate the head of the bed and maintain neutral head alignment", tag: "SCFHS" },
+    { text: "Administer prescribed sedatives", tag: "NCLEX" },
+    { text: "Notify the neurosurgeon immediately", tag: "STR" },
+    { text: "Document neurologic changes", tag: "SAFE_DELAY" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "Signs of increased intracranial pressure require immediate measures to promote venous drainage.",
+    distractors: {
+      NCLEX: "Sedation may mask neurologic deterioration.",
+      STR: "Escalation should not delay ICP reduction.",
+      SAFE_DELAY: "Documentation delays intervention."
+    }
+  }
+},
+{
+  q: "A patient admitted for alcohol withdrawal becomes tremulous, hypertensive, and tachycardic. What is the nurse’s FIRST action?",
+  options: [
+    { text: "Assess severity using a standardized withdrawal scale", tag: "SCFHS" },
+    { text: "Administer PRN benzodiazepines", tag: "NCLEX" },
+    { text: "Notify the provider of vital sign changes", tag: "STR" },
+    { text: "Place the patient in a quiet room", tag: "SAFE_DELAY" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "Objective assessment guides safe medication titration and prevents progression to delirium tremens.",
+    distractors: {
+      NCLEX: "Medication requires assessment for dosing accuracy.",
+      STR: "Notification follows data collection.",
+      SAFE_DELAY: "Environmental control alone is insufficient."
+    }
+  }
+},
+{
+  q: "A patient with a history of asthma suddenly develops wheezing, chest tightness, and difficulty speaking in full sentences. What should the nurse do FIRST?",
+  options: [
+    { text: "Administer a rapid-acting bronchodilator", tag: "SCFHS" },
+    { text: "Obtain peak expiratory flow measurements", tag: "NCLEX" },
+    { text: "Notify the respiratory therapist", tag: "STR" },
+    { text: "Document respiratory findings", tag: "SAFE_DELAY" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "Acute asthma exacerbation requires immediate bronchodilation to prevent respiratory failure.",
+    distractors: {
+      NCLEX: "Measurement delays life-saving treatment.",
+      STR: "Escalation should not delay intervention.",
+      SAFE_DELAY: "Documentation does not address distress."
+    }
+  }
+},
+{
+  q: "A hospitalized patient states, 'I want to leave now, even though I know I might die.' The patient is alert and oriented. What is the nurse’s PRIORITY action?",
+  options: [
+    { text: "Assess decision-making capacity and understanding of risks", tag: "SCFHS" },
+    { text: "Notify the healthcare provider immediately", tag: "STR" },
+    { text: "Request the patient sign an AMA form", tag: "NCLEX" },
+    { text: "Document the patient’s statement", tag: "SAFE_DELAY" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "Ethical and legal standards require assessment of capacity before honoring refusal of care.",
+    distractors: {
+      STR: "Notification follows capacity assessment.",
+      NCLEX: "Documentation or forms do not replace assessment.",
+      SAFE_DELAY: "Delay risks unsafe discharge."
+    }
+  }
+},
+{
+  q: "A patient with heart failure is receiving IV furosemide. The nurse notes muscle cramps and cardiac ectopy on the monitor. Which laboratory value should the nurse review FIRST?",
+  options: [
+    { text: "Serum potassium level", tag: "SCFHS" },
+    { text: "Serum sodium level", tag: "NCLEX" },
+    { text: "Blood urea nitrogen (BUN)", tag: "SAFE_DELAY" },
+    { text: "Serum creatinine", tag: "STR" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "Loop diuretics cause potassium loss, leading to dysrhythmias and muscle cramps.",
+    distractors: {
+      NCLEX: "Sodium imbalance is possible but less immediately life-threatening.",
+      SAFE_DELAY: "BUN does not explain ectopy.",
+      STR: "Renal function is important but not the priority sign."
+    }
+  }
+},
+{
+  q: "A patient receiving IV morphine for postoperative pain becomes difficult to arouse with a respiratory rate of 8/min. What is the nurse’s PRIORITY action?",
+  options: [
+    { text: "Administer naloxone as prescribed", tag: "SCFHS" },
+    { text: "Stimulate the patient and apply oxygen", tag: "NCLEX" },
+    { text: "Notify the healthcare provider", tag: "STR" },
+    { text: "Document the adverse reaction", tag: "SAFE_DELAY" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "Opioid-induced respiratory depression requires immediate reversal with naloxone.",
+    distractors: {
+      NCLEX: "Supportive measures do not reverse the cause.",
+      STR: "Escalation must not delay reversal.",
+      SAFE_DELAY: "Documentation delays rescue."
+    }
+  }
+},
+{
+  q: "A child with asthma is prescribed oral prednisone. Which instruction should the nurse emphasize to the parents?",
+  options: [
+    { text: "Do not stop the medication abruptly", tag: "SCFHS" },
+    { text: "Administer the medication at bedtime", tag: "SAFE_DELAY" },
+    { text: "Limit fluid intake while on therapy", tag: "NCLEX" },
+    { text: "Expect immediate relief of wheezing", tag: "STR" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "Abrupt discontinuation of corticosteroids can cause adrenal insufficiency.",
+    distractors: {
+      SAFE_DELAY: "Morning dosing is preferred.",
+      NCLEX: "Fluids are not restricted.",
+      STR: "Steroids are not rapid bronchodilators."
+    }
+  }
+},
+{
+  q: "A patient taking warfarin is prescribed trimethoprim-sulfamethoxazole. What should the nurse anticipate?",
+  options: [
+    { text: "Increased risk of bleeding", tag: "SCFHS" },
+    { text: "Decreased INR levels", tag: "SAFE_DELAY" },
+    { text: "Reduced anticoagulant effect", tag: "NCLEX" },
+    { text: "No clinically significant interaction", tag: "STR" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "This antibiotic potentiates warfarin, increasing INR and bleeding risk.",
+    distractors: {
+      SAFE_DELAY: "INR typically increases, not decreases.",
+      NCLEX: "Anticoagulant effect is enhanced.",
+      STR: "The interaction is clinically significant."
+    }
+  }
+},
+{
+  q: "A patient with type 1 diabetes is found diaphoretic and confused. Capillary glucose is 42 mg/dL. What is the nurse’s FIRST action?",
+  options: [
+    { text: "Administer IV dextrose", tag: "SCFHS" },
+    { text: "Recheck blood glucose for accuracy", tag: "SAFE_DELAY" },
+    { text: "Notify the provider", tag: "STR" },
+    { text: "Administer regular insulin", tag: "NCLEX" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "Severe hypoglycemia requires immediate glucose replacement.",
+    distractors: {
+      SAFE_DELAY: "Confirmation delays treatment.",
+      STR: "Notification follows stabilization.",
+      NCLEX: "Insulin would worsen hypoglycemia."
+    }
+  }
+},
+{
+  q: "A patient receiving digoxin reports nausea and visual halos. Which medication should the nurse expect to be ordered?",
+  options: [
+    { text: "Digoxin immune Fab", tag: "SCFHS" },
+    { text: "Atropine", tag: "NCLEX" },
+    { text: "Calcium gluconate", tag: "SAFE_DELAY" },
+    { text: "Epinephrine infusion", tag: "STR" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "These are classic signs of digoxin toxicity requiring antidote therapy.",
+    distractors: {
+      NCLEX: "Atropine treats bradycardia, not toxicity.",
+      SAFE_DELAY: "Calcium may worsen toxicity.",
+      STR: "Epinephrine is not indicated."
+    }
+  }
+},
+{
+  q: "A postoperative patient receiving enoxaparin develops sudden shortness of breath and chest pain. What is the nurse’s PRIORITY action?",
+  options: [
+    { text: "Stop the medication and initiate emergency response", tag: "SCFHS" },
+    { text: "Administer the next dose early", tag: "SAFE_DELAY" },
+    { text: "Notify the surgeon", tag: "STR" },
+    { text: "Document the findings", tag: "NCLEX" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "Symptoms suggest pulmonary embolism requiring immediate emergency intervention.",
+    distractors: {
+      SAFE_DELAY: "Additional anticoagulant could be fatal.",
+      STR: "Notification must not delay response.",
+      NCLEX: "Documentation does not save life."
+    }
+  }
+},
+{
+  q: "A patient on isoniazid therapy for tuberculosis asks about vitamin supplementation. Which supplement is MOST important?",
+  options: [
+    { text: "Vitamin B6 (pyridoxine)", tag: "SCFHS" },
+    { text: "Vitamin C", tag: "NCLEX" },
+    { text: "Vitamin D", tag: "SAFE_DELAY" },
+    { text: "Vitamin K", tag: "STR" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "Isoniazid interferes with pyridoxine metabolism, causing peripheral neuropathy.",
+    distractors: {
+      NCLEX: "Vitamin C is not protective.",
+      SAFE_DELAY: "Vitamin D is unrelated.",
+      STR: "Vitamin K affects coagulation."
+    }
+  }
+},
+{
+  q: "A patient with chronic kidney disease is prescribed metformin for newly diagnosed type 2 diabetes. Which finding would require the nurse to HOLD the medication and notify the provider?",
+  options: [
+    { text: "Estimated GFR of 28 mL/min", tag: "SCFHS" },
+    { text: "Fasting glucose of 162 mg/dL", tag: "SAFE_DELAY" },
+    { text: "BMI of 32 kg/m²", tag: "NCLEX" },
+    { text: "Mild nausea after meals", tag: "STR" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "Severe renal impairment increases the risk of lactic acidosis with metformin.",
+    distractors: {
+      SAFE_DELAY: "Hyperglycemia indicates need for therapy.",
+      NCLEX: "BMI supports use, not withholding.",
+      STR: "Mild GI effects are common initially."
+    }
+  }
+},
+{
+  q: "A postoperative patient receiving patient-controlled analgesia (PCA) with morphine becomes increasingly somnolent. Oxygen saturation is 91% on room air. What is the nurse’s FIRST action?",
+  options: [
+    { text: "Assess respiratory rate and depth", tag: "SCFHS" },
+    { text: "Administer naloxone", tag: "NCLEX" },
+    { text: "Increase oxygen via nasal cannula", tag: "SAFE_DELAY" },
+    { text: "Notify the anesthesia team", tag: "STR" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "Assessment determines whether opioid reversal is required; premature naloxone may cause severe pain.",
+    distractors: {
+      NCLEX: "Reversal is indicated only after confirming respiratory depression.",
+      SAFE_DELAY: "Oxygen does not treat hypoventilation.",
+      STR: "Notification follows assessment."
+    }
+  }
+},
+{
+  q: "A newborn exposed to opioids in utero is jittery, has a high-pitched cry, and poor feeding. Which intervention is MOST appropriate initially?",
+  options: [
+    { text: "Initiate non-pharmacologic comfort measures", tag: "SCFHS" },
+    { text: "Administer naloxone", tag: "STR" },
+    { text: "Begin IV morphine therapy", tag: "NCLEX" },
+    { text: "Withhold feeding until symptoms resolve", tag: "SAFE_DELAY" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "Neonatal abstinence syndrome is initially managed with supportive care before pharmacologic therapy.",
+    distractors: {
+      STR: "Naloxone can precipitate acute withdrawal.",
+      NCLEX: "Medication is reserved for severe cases.",
+      SAFE_DELAY: "Nutrition should be supported."
+    }
+  }
+},
+{
+  q: "A patient with schizophrenia receiving haloperidol develops muscle rigidity, hyperthermia, and altered mental status. What is the nurse’s PRIORITY action?",
+  options: [
+    { text: "Discontinue the medication and initiate emergency care", tag: "SCFHS" },
+    { text: "Administer antipyretics", tag: "SAFE_DELAY" },
+    { text: "Encourage oral fluids", tag: "NCLEX" },
+    { text: "Document extrapyramidal symptoms", tag: "STR" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "Findings indicate neuroleptic malignant syndrome, a life-threatening emergency.",
+    distractors: {
+      SAFE_DELAY: "Antipyretics alone are insufficient.",
+      NCLEX: "Fluids do not address the cause.",
+      STR: "Documentation delays treatment."
+    }
+  }
+},
+{
+  q: "A pregnant client at 32 weeks’ gestation with preeclampsia is receiving magnesium sulfate. Which finding requires IMMEDIATE intervention?",
+  options: [
+    { text: "Respiratory rate of 10/min", tag: "SCFHS" },
+    { text: "Urine output of 35 mL/hr", tag: "NCLEX" },
+    { text: "Absent patellar reflexes", tag: "SAFE_DELAY" },
+    { text: "Warm flushing sensation", tag: "STR" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "Respiratory depression indicates magnesium toxicity and threatens maternal and fetal life.",
+    distractors: {
+      NCLEX: "Output is borderline but acceptable.",
+      SAFE_DELAY: "Reflex changes occur earlier.",
+      STR: "Flushing is expected."
+    }
+  }
+},
+{
+  q: "A patient receiving chemotherapy develops an absolute neutrophil count (ANC) of 420/mm³. Which action should the nurse implement FIRST?",
+  options: [
+    { text: "Initiate neutropenic precautions", tag: "SCFHS" },
+    { text: "Administer antipyretics prophylactically", tag: "SAFE_DELAY" },
+    { text: "Encourage fresh fruits and vegetables", tag: "STR" },
+    { text: "Schedule routine ambulation", tag: "NCLEX" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "Severe neutropenia places the patient at immediate risk for infection.",
+    distractors: {
+      SAFE_DELAY: "Antipyretics mask infection.",
+      STR: "Raw foods increase infection risk.",
+      NCLEX: "Activity is secondary to protection."
+    }
+  }
+},
+{
+  q: "A patient with atrial fibrillation is receiving amiodarone. Which assessment finding requires follow-up before the next dose?",
+  options: [
+    { text: "New onset shortness of breath and cough", tag: "SCFHS" },
+    { text: "Heart rate of 62/min", tag: "NCLEX" },
+    { text: "Mild photosensitivity", tag: "STR" },
+    { text: "Prolonged QT interval within baseline", tag: "SAFE_DELAY" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "Amiodarone can cause pulmonary toxicity, which may be life-threatening.",
+    distractors: {
+      NCLEX: "Rate is therapeutic.",
+      STR: "Photosensitivity is expected.",
+      SAFE_DELAY: "Baseline QT prolongation may be monitored."
+    }
+  }
+},
+{
+  q: "A patient with sepsis is started on broad-spectrum antibiotics. Which nursing action BEST supports antibiotic stewardship?",
+  options: [
+    { text: "Obtain cultures before initiating therapy", tag: "SCFHS" },
+    { text: "Delay antibiotics until fever subsides", tag: "SAFE_DELAY" },
+    { text: "Administer probiotics routinely", tag: "NCLEX" },
+    { text: "Continue therapy regardless of results", tag: "STR" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "Cultures guide targeted therapy while minimizing resistance.",
+    distractors: {
+      SAFE_DELAY: "Delays worsen sepsis outcomes.",
+      NCLEX: "Probiotics are supportive, not stewardship.",
+      STR: "Therapy must be reassessed."
+    }
+  }
+},
+{
+  q: "A hospitalized older adult becomes acutely confused at night. He is pulling at IV lines and attempting to get out of bed. What is the nurse’s MOST appropriate initial intervention?",
+  options: [
+    { text: "Reorient the patient and ensure adequate lighting", tag: "SCFHS" },
+    { text: "Apply physical restraints for safety", tag: "SAFE_DELAY" },
+    { text: "Administer a PRN sedative", tag: "NCLEX" },
+    { text: "Notify the healthcare provider immediately", tag: "STR" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "Acute confusion is often delirium; non-pharmacologic safety and reorientation are first-line interventions.",
+    distractors: {
+      SAFE_DELAY: "Restraints increase agitation and risk.",
+      NCLEX: "Sedatives may worsen delirium.",
+      STR: "Provider notification follows initial nursing interventions."
+    }
+  }
+},
+{
+  q: "A trauma patient arrives with a blood pressure of 84/50 mmHg, heart rate 132/min, and cool clammy skin. Which intervention takes PRIORITY?",
+  options: [
+    { text: "Initiate large-bore IV access and begin fluid resuscitation", tag: "SCFHS" },
+    { text: "Administer opioid analgesia", tag: "SAFE_DELAY" },
+    { text: "Obtain a full pain assessment", tag: "NCLEX" },
+    { text: "Prepare for CT imaging", tag: "STR" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "Findings indicate hypovolemic shock; circulation must be restored immediately.",
+    distractors: {
+      SAFE_DELAY: "Pain control does not address shock.",
+      NCLEX: "Assessment delays life-saving intervention.",
+      STR: "Diagnostics follow stabilization."
+    }
+  }
+},
+{
+  q: "A patient with chronic heart failure is prescribed spironolactone. Which laboratory value requires follow-up before administration?",
+  options: [
+    { text: "Potassium level of 5.8 mmol/L", tag: "SCFHS" },
+    { text: "Sodium level of 134 mmol/L", tag: "NCLEX" },
+    { text: "Blood urea nitrogen of 26 mg/dL", tag: "STR" },
+    { text: "Creatinine of 1.3 mg/dL", tag: "SAFE_DELAY" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "Spironolactone is potassium-sparing and can cause life-threatening hyperkalemia.",
+    distractors: {
+      NCLEX: "Mild hyponatremia is common in HF.",
+      STR: "BUN alone is not a contraindication.",
+      SAFE_DELAY: "Creatinine is borderline but acceptable."
+    }
+  }
+},
+{
+  q: "A toddler presents to the emergency department after ingesting an unknown amount of medication. The child is lethargic but breathing adequately. What is the nurse’s FIRST action?",
+  options: [
+    { text: "Ensure airway patency and continuous monitoring", tag: "SCFHS" },
+    { text: "Induce vomiting", tag: "SAFE_DELAY" },
+    { text: "Administer activated charcoal immediately", tag: "NCLEX" },
+    { text: "Obtain a detailed ingestion history", tag: "STR" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "Airway and breathing take priority before decontamination or history.",
+    distractors: {
+      SAFE_DELAY: "Inducing vomiting risks aspiration.",
+      NCLEX: "Charcoal requires airway protection.",
+      STR: "History collection must not delay stabilization."
+    }
+  }
+},
+{
+  q: "A postpartum client reports severe headache and visual disturbances 2 hours after delivery. Blood pressure is 168/112 mmHg. What is the nurse’s PRIORITY action?",
+  options: [
+    { text: "Administer prescribed antihypertensive medication", tag: "SCFHS" },
+    { text: "Encourage rest in a dark room", tag: "SAFE_DELAY" },
+    { text: "Assess pain using a numeric scale", tag: "NCLEX" },
+    { text: "Notify the obstetric provider", tag: "STR" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "These findings indicate postpartum preeclampsia; blood pressure control is urgent to prevent stroke or seizure.",
+    distractors: {
+      SAFE_DELAY: "Comfort measures delay treatment.",
+      NCLEX: "Pain assessment does not address the cause.",
+      STR: "Notification should not delay intervention."
+    }
+  }
+},
+{
+  q: "A patient receiving long-term corticosteroid therapy develops fever and productive cough. What should the nurse suspect?",
+  options: [
+    { text: "Increased risk of infection due to immunosuppression", tag: "SCFHS" },
+    { text: "Expected inflammatory response", tag: "SAFE_DELAY" },
+    { text: "Medication tolerance", tag: "NCLEX" },
+    { text: "Steroid withdrawal syndrome", tag: "STR" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "Corticosteroids suppress immune function, increasing susceptibility to infection.",
+    distractors: {
+      SAFE_DELAY: "Fever is not expected.",
+      NCLEX: "Tolerance does not cause infection.",
+      STR: "Withdrawal occurs with abrupt cessation."
+    }
+  }
+},
+{
+  q: "A psychiatric patient states, 'I don’t want to live anymore, but I won’t hurt myself.' What is the nurse’s BEST response?",
+  options: [
+    { text: "Assess for suicidal ideation, intent, and plan", tag: "SCFHS" },
+    { text: "Reassure the patient that things will improve", tag: "SAFE_DELAY" },
+    { text: "Document the statement verbatim", tag: "NCLEX" },
+    { text: "Notify security personnel", tag: "STR" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "Direct assessment is essential whenever suicidal thoughts are expressed.",
+    distractors: {
+      SAFE_DELAY: "False reassurance shuts down communication.",
+      NCLEX: "Documentation follows assessment.",
+      STR: "Security is not indicated without imminent risk."
+    }
+  },
+},
+{
+  q: "A patient with diabetic ketoacidosis is receiving insulin infusion. Which finding indicates the treatment is effective?",
+  options: [
+    { text: "Decreasing serum ketone levels", tag: "SCFHS" },
+    { text: "Blood glucose of 110 mg/dL", tag: "NCLEX" },
+    { text: "Urine output of 25 mL/hr", tag: "SAFE_DELAY" },
+    { text: "Potassium level of 3.2 mmol/L", tag: "STR" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "Resolution of ketosis confirms correction of the underlying metabolic problem.",
+    distractors: {
+      NCLEX: "Glucose may normalize before acidosis resolves.",
+      SAFE_DELAY: "Output is inadequate.",
+      STR: "Hypokalemia is a complication."
+    }
+  }
+},
+{
+  q: "A nurse prepares to administer digoxin to an adult patient. Which assessment is MOST critical before giving the medication?",
+  options: [
+    { text: "Apical heart rate for one full minute", tag: "SCFHS" },
+    { text: "Blood pressure measurement", tag: "NCLEX" },
+    { text: "Oxygen saturation level", tag: "SAFE_DELAY" },
+    { text: "Daily body weight", tag: "STR" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "Digoxin can cause bradycardia; heart rate assessment prevents toxicity.",
+    distractors: {
+      NCLEX: "BP is secondary.",
+      SAFE_DELAY: "Oxygenation is not directly affected.",
+      STR: "Weight monitors fluid status, not immediate safety."
+    }
+  }
+},
+{
+  q: "A patient with septic shock is receiving norepinephrine via peripheral IV access. The nurse notes blanching and coolness at the IV site. What is the MOST appropriate immediate action?",
+  options: [
+    { text: "Stop the infusion and assess the IV site", tag: "SCFHS" },
+    { text: "Slow the infusion rate and monitor closely", tag: "SAFE_DELAY" },
+    { text: "Flush the IV line with normal saline", tag: "NCLEX" },
+    { text: "Notify the physician while continuing the infusion", tag: "STR" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "Signs indicate extravasation of a vasopressor, which can cause tissue necrosis. The infusion must be stopped immediately.",
+    distractors: {
+      SAFE_DELAY: "Slowing does not prevent tissue injury.",
+      NCLEX: "Flushing may worsen tissue damage.",
+      STR: "Notification must not delay stopping the infusion."
+    }
+  }
+},
+{
+  q: "A mechanically ventilated patient suddenly becomes agitated with high peak airway pressures and absent breath sounds on the right. What is the nurse’s FIRST action?",
+  options: [
+    { text: "Manually ventilate with a bag-valve mask", tag: "SCFHS" },
+    { text: "Increase sedation infusion", tag: "SAFE_DELAY" },
+    { text: "Request a STAT chest X-ray", tag: "NCLEX" },
+    { text: "Notify respiratory therapy immediately", tag: "STR" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "Manual ventilation rapidly determines airway patency and oxygenation in suspected tension pneumothorax or tube obstruction.",
+    distractors: {
+      SAFE_DELAY: "Sedation masks deterioration.",
+      NCLEX: "Imaging delays life-saving action.",
+      STR: "Help is appropriate after immediate intervention."
+    }
+  }
+},
+{
+  q: "A postoperative patient receiving opioid analgesia is difficult to arouse. Respiratory rate is 8/min and SpO₂ is 91%. What should the nurse do FIRST?",
+  options: [
+    { text: "Stimulate the patient and assess airway and breathing", tag: "SCFHS" },
+    { text: "Administer naloxone", tag: "SAFE_DELAY" },
+    { text: "Notify the anesthesia provider", tag: "STR" },
+    { text: "Apply supplemental oxygen", tag: "NCLEX" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "Initial nursing action focuses on airway and responsiveness before pharmacologic reversal.",
+    distractors: {
+      SAFE_DELAY: "Naloxone may precipitate acute pain and withdrawal if used prematurely.",
+      STR: "Notification should not delay assessment.",
+      NCLEX: "Oxygen does not correct hypoventilation."
+    }
+  }
+},
+{
+  q: "A patient with chronic kidney disease is ordered IV morphine for severe pain. Which assessment finding requires the nurse to question the order?",
+  options: [
+    { text: "Decreased urine output over the last 12 hours", tag: "SCFHS" },
+    { text: "Pain score of 9/10", tag: "SAFE_DELAY" },
+    { text: "Blood pressure 148/86 mmHg", tag: "NCLEX" },
+    { text: "Heart rate 96/min", tag: "STR" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "Morphine metabolites accumulate in renal impairment, increasing risk of respiratory depression.",
+    distractors: {
+      SAFE_DELAY: "Pain severity alone does not ensure safety.",
+      NCLEX: "Blood pressure is acceptable.",
+      STR: "Heart rate does not contraindicate use."
+    }
+  }
+},
+{
+  q: "A child with suspected epiglottitis is sitting upright, drooling, and in respiratory distress. What is the nurse’s MOST appropriate action?",
+  options: [
+    { text: "Maintain the child in an upright position and prepare for airway support", tag: "SCFHS" },
+    { text: "Inspect the throat with a tongue depressor", tag: "SAFE_DELAY" },
+    { text: "Obtain a throat culture", tag: "NCLEX" },
+    { text: "Administer oral antibiotics", tag: "STR" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "Manipulating the airway may cause complete obstruction; airway protection is the priority.",
+    distractors: {
+      SAFE_DELAY: "Throat inspection can be fatal.",
+      NCLEX: "Diagnostics delay airway management.",
+      STR: "Medication follows airway stabilization."
+    }
+  }
+},
+{
+  q: "A patient receiving continuous enteral feeding develops sudden coughing and oxygen desaturation. What should the nurse do FIRST?",
+  options: [
+    { text: "Stop the feeding and elevate the head of the bed", tag: "SCFHS" },
+    { text: "Suction the airway", tag: "NCLEX" },
+    { text: "Notify the healthcare provider", tag: "STR" },
+    { text: "Check gastric residual volume", tag: "SAFE_DELAY" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "Aspiration is suspected; stopping the feed and positioning prevents further compromise.",
+    distractors: {
+      NCLEX: "Suction may be required after stabilization.",
+      STR: "Notification should not delay action.",
+      SAFE_DELAY: "Residual checks are preventive, not emergent."
+    }
+  }
+},
+{
+  q: "A psychiatric inpatient refuses prescribed antipsychotic medication, stating, 'You are trying to poison me.' What is the nurse’s BEST response?",
+  options: [
+    { text: "Acknowledge the concern and explore the patient’s perception", tag: "SCFHS" },
+    { text: "Insist the medication is necessary", tag: "SAFE_DELAY" },
+    { text: "Document refusal and leave the room", tag: "NCLEX" },
+    { text: "Notify security for assistance", tag: "STR" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "Therapeutic communication builds trust and reduces paranoia.",
+    distractors: {
+      SAFE_DELAY: "Confrontation increases resistance.",
+      NCLEX: "Documentation alone abandons care.",
+      STR: "Security escalates unnecessarily."
+    }
+  }
+},
+{
+  q: "A patient with acute GI bleeding is hypotensive and tachycardic. Hemoglobin is 6.8 g/dL. What is the nurse’s PRIORITY action?",
+  options: [
+    { text: "Initiate blood transfusion as prescribed", tag: "SCFHS" },
+    { text: "Administer IV proton pump inhibitor", tag: "NCLEX" },
+    { text: "Prepare the patient for endoscopy", tag: "STR" },
+    { text: "Monitor vital signs every 15 minutes", tag: "SAFE_DELAY" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "Severe anemia with instability requires immediate volume and oxygen-carrying support.",
+    distractors: {
+      NCLEX: "Medication does not correct hypovolemia.",
+      STR: "Procedures follow stabilization.",
+      SAFE_DELAY: "Monitoring alone is insufficient."
+    }
+  }
+},
+{
+  q: "A nurse discovers a medication error after administering the wrong dose. What is the nurse’s FIRST responsibility?",
+  options: [
+    { text: "Assess the patient for adverse effects", tag: "SCFHS" },
+    { text: "Complete an incident report", tag: "SAFE_DELAY" },
+    { text: "Notify the charge nurse", tag: "STR" },
+    { text: "Document the error in the medical record", tag: "NCLEX" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "Patient safety and assessment always take priority over reporting.",
+    distractors: {
+      SAFE_DELAY: "Reporting follows patient assessment.",
+      STR: "Notification should not delay care.",
+      NCLEX: "Documentation comes after evaluation."
+    }
+  }
+},
+{
+  q: "A patient in the ICU suddenly becomes unresponsive. Telemetry shows ventricular fibrillation. What is the nurse’s FIRST action?",
+  options: [
+    { text: "Initiate defibrillation immediately", tag: "SCFHS" },
+    { text: "Begin chest compressions", tag: "NCLEX" },
+    { text: "Call a code blue", tag: "STR" },
+    { text: "Check for a pulse", tag: "SAFE_DELAY" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "Ventricular fibrillation is a shockable rhythm requiring immediate defibrillation.",
+    distractors: {
+      NCLEX: "CPR follows if defibrillation is unavailable.",
+      STR: "Activation should not delay shock.",
+      SAFE_DELAY: "Delay worsens survival."
+    }
+  }
+},
+{
+  q: "An intubated trauma patient suddenly has a drop in blood pressure, distended neck veins, and absent breath sounds on the left. What should the nurse anticipate FIRST?",
+  options: [
+    { text: "Immediate needle decompression", tag: "SCFHS" },
+    { text: "Increase IV fluid infusion", tag: "SAFE_DELAY" },
+    { text: "Obtain portable chest X-ray", tag: "NCLEX" },
+    { text: "Notify the trauma surgeon", tag: "STR" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "Findings indicate tension pneumothorax, which requires immediate decompression.",
+    distractors: {
+      SAFE_DELAY: "Fluids do not relieve obstructive shock.",
+      NCLEX: "Imaging delays life-saving action.",
+      STR: "Notification must not delay intervention."
+    }
+  }
+},
+{
+  q: "A patient receiving propofol infusion becomes hypotensive and bradycardic. What is the nurse’s PRIORITY action?",
+  options: [
+    { text: "Stop the propofol infusion and support airway", tag: "SCFHS" },
+    { text: "Administer atropine", tag: "NCLEX" },
+    { text: "Notify the provider", tag: "STR" },
+    { text: "Increase IV fluids", tag: "SAFE_DELAY" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "Propofol causes dose-dependent cardiovascular depression and must be stopped immediately.",
+    distractors: {
+      NCLEX: "Medication may follow stabilization.",
+      STR: "Notification should not delay action.",
+      SAFE_DELAY: "Fluids alone may not correct the cause."
+    }
+  }
+},
+{
+  q: "A septic patient on vasopressors suddenly develops mottled skin, rising lactate, and decreasing urine output. What does this MOST indicate?",
+  options: [
+    { text: "Worsening tissue hypoperfusion", tag: "SCFHS" },
+    { text: "Expected response to vasopressors", tag: "SAFE_DELAY" },
+    { text: "Improving hemodynamic status", tag: "NCLEX" },
+    { text: "Medication side effect only", tag: "STR" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "These are classic signs of inadequate tissue perfusion and progressing shock.",
+    distractors: {
+      SAFE_DELAY: "These are not benign findings.",
+      NCLEX: "Perfusion is deteriorating, not improving.",
+      STR: "This is not an isolated drug effect."
+    }
+  }
+},
+{
+  q: "A patient with a massive GI bleed suddenly becomes restless and hypotensive. What is the nurse’s FIRST bedside action?",
+  options: [
+    { text: "Ensure airway patency and administer high-flow oxygen", tag: "SCFHS" },
+    { text: "Administer PRBC transfusion", tag: "NCLEX" },
+    { text: "Notify the rapid response team", tag: "STR" },
+    { text: "Insert a urinary catheter", tag: "SAFE_DELAY" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "Hypoxia precedes cardiovascular collapse; airway and oxygenation come first.",
+    distractors: {
+      NCLEX: "Transfusion follows initial stabilization.",
+      STR: "Escalation must not delay intervention.",
+      SAFE_DELAY: "Catheterization is not emergent."
+    }
+  }
+},
+{
+  q: "A mechanically ventilated patient suddenly has a high-pressure alarm and oxygen saturation drops to 82%. What is the nurse’s FIRST action?",
+  options: [
+    { text: "Disconnect ventilator and manually ventilate", tag: "SCFHS" },
+    { text: "Increase oxygen concentration on ventilator", tag: "SAFE_DELAY" },
+    { text: "Suction the endotracheal tube", tag: "NCLEX" },
+    { text: "Notify respiratory therapy", tag: "STR" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "Manual ventilation immediately determines airway patency and oxygenation.",
+    distractors: {
+      SAFE_DELAY: "Increasing FiO₂ does not resolve obstruction.",
+      NCLEX: "Suction may follow assessment.",
+      STR: "Help should not delay action."
+    }
+  }
+},
+{
+  q: "A patient develops sudden severe headache, vomiting, and unilateral pupil dilation. What should the nurse do FIRST?",
+  options: [
+    { text: "Elevate head of bed and maintain airway", tag: "SCFHS" },
+    { text: "Administer prescribed analgesic", tag: "SAFE_DELAY" },
+    { text: "Prepare for CT scan", tag: "NCLEX" },
+    { text: "Notify neurosurgery", tag: "STR" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "Findings suggest increased intracranial pressure; airway and positioning reduce further injury.",
+    distractors: {
+      SAFE_DELAY: "Analgesia masks neurological changes.",
+      NCLEX: "Imaging follows stabilization.",
+      STR: "Notification must not delay care."
+    }
+  }
+},
+{
+  q: "A trauma patient suddenly becomes combative and hypoxic during rapid blood transfusion. What is the nurse’s PRIORITY action?",
+  options: [
+    { text: "Stop the transfusion immediately", tag: "SCFHS" },
+    { text: "Increase oxygen delivery", tag: "NCLEX" },
+    { text: "Notify the blood bank", tag: "STR" },
+    { text: "Administer antihistamine", tag: "SAFE_DELAY" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "These findings suggest a transfusion reaction; stopping exposure is critical.",
+    distractors: {
+      NCLEX: "Oxygen alone does not correct the cause.",
+      STR: "Notification follows stopping transfusion.",
+      SAFE_DELAY: "Medication should not delay stopping."
+    }
+  }
+},
+{
+  q: "A patient in DKA develops cardiac arrhythmias while receiving insulin therapy. Which imbalance is MOST likely responsible?",
+  options: [
+    { text: "Hypokalemia", tag: "SCFHS" },
+    { text: "Hypernatremia", tag: "NCLEX" },
+    { text: "Metabolic alkalosis", tag: "SAFE_DELAY" },
+    { text: "Hypercalcemia", tag: "STR" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "Insulin shifts potassium intracellularly, risking life-threatening hypokalemia.",
+    distractors: {
+      NCLEX: "Sodium changes are less arrhythmogenic.",
+      SAFE_DELAY: "DKA causes acidosis, not alkalosis.",
+      STR: "Calcium is not primarily affected."
+    }
+  }
+},
+{
+  q: "A nurse finds an ICU patient pulseless with a monitor showing asystole. What is the MOST appropriate action?",
+  options: [
+    { text: "Begin high-quality CPR immediately", tag: "SCFHS" },
+    { text: "Prepare the defibrillator", tag: "SAFE_DELAY" },
+    { text: "Administer epinephrine", tag: "NCLEX" },
+    { text: "Call the physician", tag: "STR" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "Asystole is a non-shockable rhythm requiring immediate CPR.",
+    distractors: {
+      SAFE_DELAY: "Defibrillation is ineffective.",
+      NCLEX: "Medication follows CPR.",
+      STR: "Calling delays resuscitation."
+    }
+  }
+},
+{
+  q: "A patient receiving IV potassium chloride suddenly reports burning pain at the infusion site. The area is swollen and pale. What is the nurse’s FIRST action?",
+  options: [
+    { text: "Stop the infusion immediately and assess the site", tag: "SCFHS" },
+    { text: "Slow the infusion rate", tag: "SAFE_DELAY" },
+    { text: "Apply a warm compress", tag: "NCLEX" },
+    { text: "Notify the physician", tag: "STR" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "Potassium is highly vesicant; extravasation can cause tissue necrosis and must be stopped immediately.",
+    distractors: {
+      SAFE_DELAY: "Slowing does not prevent tissue damage.",
+      NCLEX: "Compresses may worsen injury.",
+      STR: "Notification must not delay stopping the infusion."
+    }
+  }
+},
+{
+  q: "A patient on heparin infusion develops a sudden drop in platelet count from 220,000 to 78,000/mm³. What is the nurse’s PRIORITY action?",
+  options: [
+    { text: "Stop heparin immediately", tag: "SCFHS" },
+    { text: "Reduce the infusion rate", tag: "SAFE_DELAY" },
+    { text: "Administer platelet transfusion", tag: "NCLEX" },
+    { text: "Notify the provider while continuing heparin", tag: "STR" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "This suggests heparin-induced thrombocytopenia; continued exposure increases thrombosis risk.",
+    distractors: {
+      SAFE_DELAY: "Any continuation worsens the condition.",
+      NCLEX: "Platelets are contraindicated unless bleeding.",
+      STR: "Heparin must be stopped first."
+    }
+  }
+},
+{
+  q: "A patient taking warfarin presents with black tarry stools. INR is 6.2. What is the nurse’s FIRST concern?",
+  options: [
+    { text: "Active gastrointestinal bleeding", tag: "SCFHS" },
+    { text: "Expected anticoagulation effect", tag: "SAFE_DELAY" },
+    { text: "Need for dietary vitamin K education", tag: "NCLEX" },
+    { text: "Risk for clot formation", tag: "STR" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "Melena with supratherapeutic INR indicates life-threatening bleeding.",
+    distractors: {
+      SAFE_DELAY: "This is not an expected effect.",
+      NCLEX: "Education is secondary to bleeding.",
+      STR: "Clot risk is reduced, not increased."
+    }
+  }
+},
+{
+  q: "A patient receiving digoxin reports nausea and yellow-green visual halos. Heart rate is 52/min. What is the nurse’s PRIORITY action?",
+  options: [
+    { text: "Hold the medication and notify the provider", tag: "SCFHS" },
+    { text: "Administer the dose with food", tag: "SAFE_DELAY" },
+    { text: "Check blood pressure", tag: "NCLEX" },
+    { text: "Document findings and reassess later", tag: "STR" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "Classic signs of digoxin toxicity require immediate withholding of the drug.",
+    distractors: {
+      SAFE_DELAY: "Food does not reverse toxicity.",
+      NCLEX: "BP is not the immediate danger.",
+      STR: "Delay risks fatal arrhythmias."
+    }
+  }
+},
+{
+  q: "A patient receiving IV insulin infusion shows potassium level of 3.1 mmol/L. What should the nurse do FIRST?",
+  options: [
+    { text: "Hold insulin and notify the provider", tag: "SCFHS" },
+    { text: "Continue insulin as ordered", tag: "SAFE_DELAY" },
+    { text: "Administer insulin with dextrose", tag: "NCLEX" },
+    { text: "Increase IV fluids", tag: "STR" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "Insulin worsens hypokalemia, risking lethal arrhythmias.",
+    distractors: {
+      SAFE_DELAY: "Continuing insulin is dangerous.",
+      NCLEX: "Dextrose does not correct potassium.",
+      STR: "Fluids do not prevent arrhythmia."
+    }
+  }
+},
+{
+  q: "A patient on long-term benzodiazepines becomes confused and tremulous after abrupt discontinuation. What is the MOST likely cause?",
+  options: [
+    { text: "Withdrawal syndrome", tag: "SCFHS" },
+    { text: "Medication toxicity", tag: "SAFE_DELAY" },
+    { text: "Progression of anxiety disorder", tag: "NCLEX" },
+    { text: "Delirium unrelated to medication", tag: "STR" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "Abrupt benzodiazepine cessation causes withdrawal, including seizures and delirium.",
+    distractors: {
+      SAFE_DELAY: "This is not overdose.",
+      NCLEX: "Symptoms exceed baseline anxiety.",
+      STR: "Timing implicates medication."
+    }
+  }
+},
+{
+  q: "A patient receiving IV vancomycin develops flushing, hypotension, and pruritus. What is the nurse’s FIRST action?",
+  options: [
+    { text: "Stop the infusion and assess the patient", tag: "SCFHS" },
+    { text: "Administer epinephrine", tag: "SAFE_DELAY" },
+    { text: "Slow the infusion rate", tag: "NCLEX" },
+    { text: "Notify the provider immediately", tag: "STR" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "Red man syndrome requires stopping infusion before further action.",
+    distractors: {
+      SAFE_DELAY: "Epinephrine is not first-line.",
+      NCLEX: "Slowing occurs after stopping.",
+      STR: "Notification follows assessment."
+    }
+  }
+},
+{
+  q: "A patient receiving chemotherapy develops a neutrophil count of 400/mm³ and a temperature of 38.5°C. What is the nurse’s PRIORITY action?",
+  options: [
+    { text: "Initiate neutropenic sepsis protocol immediately", tag: "SCFHS" },
+    { text: "Administer antipyretics", tag: "SAFE_DELAY" },
+    { text: "Obtain blood cultures only", tag: "NCLEX" },
+    { text: "Notify the oncologist", tag: "STR" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "Febrile neutropenia is a medical emergency requiring immediate intervention.",
+    distractors: {
+      SAFE_DELAY: "Antipyretics mask infection.",
+      NCLEX: "Cultures alone delay treatment.",
+      STR: "Protocols precede notification."
+    }
+  }
+},
+{
+  q: "A patient on MAOI therapy consumes aged cheese and develops severe hypertension and headache. What is the nurse’s FIRST concern?",
+  options: [
+    { text: "Hypertensive crisis", tag: "SCFHS" },
+    { text: "Expected food intolerance", tag: "SAFE_DELAY" },
+    { text: "Medication noncompliance", tag: "NCLEX" },
+    { text: "Anxiety attack", tag: "STR" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "Tyramine interaction with MAOIs causes life-threatening hypertension.",
+    distractors: {
+      SAFE_DELAY: "This is not benign.",
+      NCLEX: "Education is secondary.",
+      STR: "Symptoms exceed anxiety."
+    }
+  }
+},
+{
+  q: "A nurse prepares to administer IV phenytoin. Which action is MOST critical to prevent complications?",
+  options: [
+    { text: "Administer via a dedicated line with normal saline only", tag: "SCFHS" },
+    { text: "Infuse rapidly for seizure control", tag: "SAFE_DELAY" },
+    { text: "Dilute with dextrose solution", tag: "NCLEX" },
+    { text: "Administer intramuscularly if IV access fails", tag: "STR" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "Phenytoin precipitates in dextrose and causes tissue necrosis if improperly administered.",
+    distractors: {
+      SAFE_DELAY: "Rapid infusion causes hypotension and arrhythmias.",
+      NCLEX: "Dextrose is incompatible.",
+      STR: "IM causes severe tissue injury."
+    }
+  }
+},
+{
+  q: "A patient receiving lithium reports tremor, diarrhea, and confusion. What lab value is MOST important to check immediately?",
+  options: [
+    { text: "Serum lithium level", tag: "SCFHS" },
+    { text: "Blood glucose level", tag: "SAFE_DELAY" },
+    { text: "White blood cell count", tag: "NCLEX" },
+    { text: "Hemoglobin level", tag: "STR" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "These are signs of lithium toxicity requiring immediate level assessment.",
+    distractors: {
+      SAFE_DELAY: "Glucose does not explain symptoms.",
+      NCLEX: "WBC is unrelated.",
+      STR: "Hemoglobin is not relevant."
+    }
+  }
+},
+{
+  q: "A patient with asthma receives repeated doses of albuterol and develops tachycardia and tremors. What is the nurse’s BEST interpretation?",
+  options: [
+    { text: "Expected beta-agonist side effects", tag: "SCFHS" },
+    { text: "Medication allergy", tag: "SAFE_DELAY" },
+    { text: "Impending respiratory failure", tag: "NCLEX" },
+    { text: "Anxiety disorder exacerbation", tag: "STR" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "Beta-agonists commonly cause tremor and tachycardia.",
+    distractors: {
+      SAFE_DELAY: "No allergic features present.",
+      NCLEX: "Side effects explain findings.",
+      STR: "Timing implicates medication."
+    }
+  }
+},
+{
+  q: "A patient on opioids and benzodiazepines becomes increasingly somnolent. Respiratory rate is 10/min. What is the nurse’s PRIORITY concern?",
+  options: [
+    { text: "Additive respiratory depression", tag: "SCFHS" },
+    { text: "Medication tolerance", tag: "SAFE_DELAY" },
+    { text: "Progression of underlying disease", tag: "NCLEX" },
+    { text: "Expected sedation effect", tag: "STR" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "Combined CNS depressants significantly increase risk of respiratory failure.",
+    distractors: {
+      SAFE_DELAY: "Tolerance does not protect respiration.",
+      NCLEX: "Medication interaction explains findings.",
+      STR: "This is not expected or safe."
+    }
+  }
+},
+{
+  q: "An alert, oriented patient refuses a prescribed blood transfusion for religious reasons. Family members demand that the nurse proceed anyway. What is the nurse’s BEST action?",
+  options: [
+    { text: "Respect the patient’s refusal and document the decision", tag: "SCFHS" },
+    { text: "Proceed with transfusion to prevent harm", tag: "SAFE_DELAY" },
+    { text: "Ask the family to sign consent", tag: "NCLEX" },
+    { text: "Notify the physician and wait for further orders", tag: "STR" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "A competent patient has the legal right to refuse treatment, even if the decision may result in harm.",
+    distractors: {
+      SAFE_DELAY: "Administering treatment without consent constitutes battery.",
+      NCLEX: "Family cannot override a competent patient’s decision.",
+      STR: "Notification does not supersede patient autonomy."
+    }
+  }
+},
+{
+  q: "A nurse accidentally administers the wrong dose of medication. The patient is stable. What is the nurse’s LEGAL obligation?",
+  options: [
+    { text: "Report the error according to institutional policy", tag: "SCFHS" },
+    { text: "Monitor the patient closely and say nothing", tag: "SAFE_DELAY" },
+    { text: "Document the intended dose instead", tag: "NCLEX" },
+    { text: "Wait to see if the patient is harmed", tag: "STR" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "Medication errors must be disclosed and reported to ensure patient safety and legal accountability.",
+    distractors: {
+      SAFE_DELAY: "Concealment increases legal liability.",
+      NCLEX: "Falsifying records is illegal.",
+      STR: "Harm does not determine duty to report."
+    }
+  }
+},
+{
+  q: "A confused patient repeatedly attempts to leave the unit despite being at high risk for injury. There is no restraint order. What should the nurse do FIRST?",
+  options: [
+    { text: "Stay with the patient and ensure safety", tag: "SCFHS" },
+    { text: "Apply wrist restraints for protection", tag: "SAFE_DELAY" },
+    { text: "Call security to restrain the patient", tag: "NCLEX" },
+    { text: "Document the behavior and continue care", tag: "STR" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "Least-restrictive interventions must be used first to prevent harm while respecting patient rights.",
+    distractors: {
+      SAFE_DELAY: "Restraints require assessment, order, and justification.",
+      NCLEX: "Security involvement escalates unnecessarily.",
+      STR: "Documentation alone does not ensure safety."
+    }
+  }
+},
+{
+  q: "A nurse is asked to perform a procedure she has not been trained to do. What is the MOST appropriate response?",
+  options: [
+    { text: "Refuse and inform the supervisor", tag: "SCFHS" },
+    { text: "Attempt the procedure carefully", tag: "SAFE_DELAY" },
+    { text: "Ask another nurse to explain quickly", tag: "NCLEX" },
+    { text: "Proceed under the physician’s verbal direction", tag: "STR" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "Practicing beyond one’s competence violates professional and legal standards.",
+    distractors: {
+      SAFE_DELAY: "Good intentions do not reduce liability.",
+      NCLEX: "Informal instruction is insufficient.",
+      STR: "Physician direction does not extend nursing scope."
+    }
+  }
+},
+{
+  q: "A patient reveals suicidal thoughts but asks the nurse not to tell anyone. What is the nurse’s PRIORITY obligation?",
+  options: [
+    { text: "Report the information to ensure patient safety", tag: "SCFHS" },
+    { text: "Respect confidentiality and keep the secret", tag: "SAFE_DELAY" },
+    { text: "Encourage the patient to tell the provider later", tag: "NCLEX" },
+    { text: "Document the statement without action", tag: "STR" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "Confidentiality is overridden when there is imminent risk of harm.",
+    distractors: {
+      SAFE_DELAY: "Secrecy endangers the patient.",
+      NCLEX: "Delay increases risk.",
+      STR: "Documentation alone is insufficient."
+    }
+  }
+},
+{
+  q: "A nurse documents assessment findings that were not actually performed. This behavior constitutes what legal violation?",
+  options: [
+    { text: "Falsification of records", tag: "SCFHS" },
+    { text: "Negligence", tag: "SAFE_DELAY" },
+    { text: "Malpractice", tag: "NCLEX" },
+    { text: "Insubordination", tag: "STR" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "Documenting false information is legally considered falsification.",
+    distractors: {
+      SAFE_DELAY: "Negligence involves failure to act, not false records.",
+      NCLEX: "Malpractice requires patient harm.",
+      STR: "Insubordination relates to authority, not records."
+    }
+  }
+},
+{
+  q: "A patient without decision-making capacity has no advance directive. Who may legally consent to treatment?",
+  options: [
+    { text: "The legally appointed healthcare proxy", tag: "SCFHS" },
+    { text: "Any available family member", tag: "SAFE_DELAY" },
+    { text: "The bedside nurse", tag: "NCLEX" },
+    { text: "The attending physician alone", tag: "STR" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "Consent must follow the legal hierarchy of decision-makers.",
+    distractors: {
+      SAFE_DELAY: "Not all family members have authority.",
+      NCLEX: "Nurses cannot provide consent.",
+      STR: "Physicians do not replace legal surrogates."
+    }
+  }
+},
+{
+  q: "A nurse discusses a patient’s diagnosis in an elevator with another staff member. This is a violation of what principle?",
+  options: [
+    { text: "Confidentiality", tag: "SCFHS" },
+    { text: "Beneficence", tag: "SAFE_DELAY" },
+    { text: "Informed consent", tag: "NCLEX" },
+    { text: "Nonmaleficence", tag: "STR" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "Patient information must only be shared in appropriate, private settings.",
+    distractors: {
+      SAFE_DELAY: "Beneficence relates to doing good.",
+      NCLEX: "Consent involves decision-making.",
+      STR: "Nonmaleficence refers to avoiding harm."
+    }
+  }
+},
+{
+  q: "A nurse delegates vital sign measurement to unlicensed assistive personnel. Which task must the nurse retain?",
+  options: [
+    { text: "Interpreting abnormal findings", tag: "SCFHS" },
+    { text: "Recording the vital signs", tag: "SAFE_DELAY" },
+    { text: "Using automated equipment", tag: "NCLEX" },
+    { text: "Reporting routine results", tag: "STR" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "Assessment and interpretation cannot be delegated.",
+    distractors: {
+      SAFE_DELAY: "Documentation may be delegated per policy.",
+      NCLEX: "Equipment use is task-based.",
+      STR: "Routine reporting does not require judgment."
+    }
+  }
+},
+{
+  q: "A terminally ill patient requests increasing doses of pain medication despite risk of respiratory depression. What ethical principle supports this action?",
+  options: [
+    { text: "Principle of double effect", tag: "SCFHS" },
+    { text: "Autonomy violation", tag: "SAFE_DELAY" },
+    { text: "Nonmaleficence breach", tag: "NCLEX" },
+    { text: "Justice", tag: "STR" }
+  ],
+  correctTag: "SCFHS",
+  rationale: {
+    correct: "Relieving suffering is ethically permissible even if a foreseeable secondary effect exists.",
+    distractors: {
+      SAFE_DELAY: "The patient’s choice is respected.",
+      NCLEX: "Harm is not the intent.",
+      STR: "Justice relates to fairness."
+    }
+  }
 }
 ];
 
