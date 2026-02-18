@@ -10,9 +10,10 @@ body { font-family: Arial; background:#f4f6f8; padding:20px }
 .hidden { display:none }
 .option { border:1px solid #ccc; padding:12px; margin:10px 0; cursor:pointer }
 .option.selected { background:#dde6ff }
-.correct { border-left:6px solid green; background:#e9f8ee }
-.wrong { border-left:6px solid red; background:#fdeaea }
+.option.correct { border-left:6px solid green; background:#e9f8ee }
+.option.wrong { border-left:6px solid red; background:#fdeaea }
 button { padding:10px 16px; margin-top:15px }
+.rationale { background:#f9fafb; padding:15px; margin-top:15px }
 </style>
 </head>
 
@@ -33,7 +34,7 @@ button { padding:10px 16px; margin-top:15px }
   <p id="questionText"></p>
   <div id="options"></div>
   <button id="submitBtn">Submit</button>
-  <div id="rationaleBox" class="hidden"></div>
+  <div id="rationaleBox" class="rationale hidden"></div>
   <button id="nextBtn" class="hidden">Next</button>
 </div>
 
@@ -47,13 +48,9 @@ button { padding:10px 16px; margin-top:15px }
 </div>
 
 <script>
-/* -------- DOM BINDING (THIS WAS MISSING) -------- */
-const nameInput = document.getElementById("studentName");
-const idInput   = document.getElementById("studentID");
-const startBtn  = document.getElementById("startBtn");
-
-/* -------- DATA -------- */
-const questions = [{
+/* ---------- DATA ---------- */
+const questions = [
+  {
   q: "A 68-year-old patient with pneumonia becomes restless. BP 88/54, HR 124, RR 30, SpO₂ 89%. Priority action?",
   options: [
     { text:"Notify physician", tag:"STR" },
