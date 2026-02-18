@@ -242,71 +242,99 @@ const questions = [
 }
 ];
 
-/* -------- ENGINE -------- */
+/* ---------- ENGINE ---------- */
 let current = 0;
 let selected = null;
 let score = { SCFHS:0, NCLEX:0, STR:0, SAFE_DELAY:0 };
 
-function shuffle(a){ return a.sort(()=>Math.random()-0.5); }
+const nameInput = document.getElementById("studentName");
+const idInput   = document.getElementById("studentID");
 
-startBtn.onclick = () => {
+document.getElementById("startBtn").onclick = () => {
   if (!nameInput.value || !idInput.value) {
     alert("Enter Name and ID");
     return;
   }
-  shuffle(questions);
-  questions.forEach(q=>shuffle(q.options));
   document.getElementById("startScreen").classList.add("hidden");
   document.getElementById("examScreen").classList.remove("hidden");
   loadQuestion();
 };
 
 function loadQuestion(){
-  selected=null;
+  selected = null;
   document.getElementById("rationaleBox").classList.add("hidden");
   document.getElementById("nextBtn").classList.add("hidden");
+
   const q = questions[current];
-  document.getElementById("progress").innerText=`Question ${current+1}`;
-  document.getElementById("questionText").innerText=q.q;
-  const o=document.getElementById("options"); o.innerHTML="";
+  document.getElementById("progress").innerText = `Question ${current+1} of ${questions.length}`;
+  document.getElementById("questionText").innerText = q.q;
+
+  const optionsDiv = document.getElementById("options");
+  optionsDiv.innerHTML = "";
+
   q.options.forEach((opt,i)=>{
-    const d=document.createElement("div");
-    d.className="option";
-    d.innerText=opt.text;
-    d.onclick=()=>{ document.querySelectorAll(".option").forEach(x=>x.classList.remove("selected")); d.classList.add("selected"); selected=i; };
-    o.appendChild(d);
+    const d = document.createElement("div");
+    d.className = "option";
+    d.innerText = opt.text;
+    d.onclick = ()=>{
+      document.querySelectorAll(".option").forEach(x=>x.classList.remove("selected"));
+      d.classList.add("selected");
+      selected = i;
+    };
+    optionsDiv.appendChild(d);
   });
 }
 
 document.getElementById("submitBtn").onclick = () => {
-  if (selected===null) return alert("Select option");
-  const q=questions[current];
-  const chosen=q.options[selected];
-  const correct = chosen.tag===q.correctTag;
-  correct ? score.SCFHS++ : score[chosen.tag]++;
-  const r=document.getElementById("rationaleBox");
+  if (selected === null) return alert("Select an option");
+
+  const q = questions[current];
+  const chosen = q.options[selected];
+  const isCorrect = chosen.tag === q.correctTag;
+
+  if (isCorrect) score.SCFHS++;
+  else score[chosen.tag]++;
+
+  const r = document.getElementById("rationaleBox");
   r.classList.remove("hidden");
-  let html = correct?"<b>Correct</b><br><br>":"<b>Incorrect</b><br><br>";
+
+  let html = isCorrect ? "<b>Correct</b><br><br>" : "<b>Incorrect</b><br><br>";
+
   q.options.forEach(opt=>{
-    html+=`<p><b>${opt.text}</b><br>${opt.tag===q.correctTag?q.rationale.correct:q.rationale.distractors[opt.tag]}</p>`;
+    html += `<p><b>${opt.text}</b><br>${
+      opt.tag === q.correctTag
+        ? q.rationale.correct
+        : q.rationale.distractors[opt.tag]
+    }</p>`;
   });
-  r.innerHTML=html;
+
+  r.innerHTML = html;
+
   document.querySelectorAll(".option").forEach((d,i)=>{
-    if(q.options[i].tag===q.correctTag) d.classList.add("correct");
-    else if(i===selected) d.classList.add("wrong");
-    d.onclick=null;
+    if (q.options[i].tag === q.correctTag) d.classList.add("correct");
+    else if (i === selected) d.classList.add("wrong");
+    d.onclick = null;
   });
+
   document.getElementById("nextBtn").classList.remove("hidden");
 };
 
 document.getElementById("nextBtn").onclick = () => {
-  document.getElementById("examScreen").classList.add("hidden");
-  document.getElementById("resultScreen").classList.remove("hidden");
-  document.getElementById("finalInfo").innerHTML=`${nameInput.value} | ${idInput.value}`;
-  document.getElementById("decision").innerHTML=
-    score.SCFHS>=score.NCLEX && score.SCFHS>=score.STR
-    ? "<b>GO — SCFHS Readiness Indicated</b>"
-    : "<b>NO-GO — Remediation Required</b>";
+  current++;
+  if (current < questions.length) {
+    loadQuestion();
+  } else {
+    document.getElementById("examScreen").classList.add("hidden");
+    document.getElementById("resultScreen").classList.remove("hidden");
+
+    document.getElementById("finalInfo").innerHTML =
+      `${nameInput.value} | ${idInput.value}`;
+
+    document.getElementById("decision").innerHTML =
+      score.SCFHS >= score.NCLEX && score.SCFHS >= score.STR
+        ? "<b>GO — SCFHS Readiness Indicated</b>"
+        : "<b>NO-GO — Remediation Required</b>";
+  }
 };
 </script>
 </body>
